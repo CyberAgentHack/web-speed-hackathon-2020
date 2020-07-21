@@ -60,4 +60,48 @@ module.exports = {
   devtool: 'cheap-source-map',
 
   mode: process.env.NODE_ENV,
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        framework: {
+          name: 'framework',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/](react|react-dom|immutable)[\\/]/,
+          priority: 60,
+        },
+        font: {
+          name: 'font',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/](@fortawesome\/free-solid-svg-icons)[\\/]/,
+          priority: 50,
+        },
+        time: {
+          name: 'time',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/](moment|moment-timezone)[\\/]/,
+          priority: 40,
+        },
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: (module) => {
+            return module.context && module.context.includes('node_modules');
+          },
+          priority: 30,
+          reuseExistingChunk: true,
+        },
+        assets: {
+          name: 'assets',
+          chunks: 'all',
+          test: (module) => {
+            return module.context && module.context.includes('assets');
+          },
+          priority: 20,
+          reuseExistingChunk: true,
+        },
+      },
+      maxInitialRequests: 20,
+    },
+  },
 };
