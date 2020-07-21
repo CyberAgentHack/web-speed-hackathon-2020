@@ -36,8 +36,7 @@ export function EntryList({ blogId, list }) {
               </Link>
             </li>
           );
-        })
-        .value()}
+        })}
     </ul>
   );
 }
