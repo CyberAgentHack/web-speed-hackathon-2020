@@ -9,7 +9,8 @@
   <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
   <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" defer></script>
   <% } %>
-  <link rel="stylesheet" type="text/css" href="/app.css" />
+  <link rel="stylesheet" href="/app.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2:700&display=swap" />
 </head>
 
 <body>

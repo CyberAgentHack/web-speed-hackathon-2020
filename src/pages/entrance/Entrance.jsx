@@ -34,6 +34,19 @@ export function Entrance() {
   }, [dispatch]);
 
   useEffect(() => {
+    if (document.getElementById('webFontStyleLink') === null) {
+      const webFontStyleLink = document.createElement('link');
+      webFontStyleLink.setAttribute('rel', 'stylesheet');
+      webFontStyleLink.setAttribute(
+        'href',
+        `https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700&display=swap&text=${heroTextJaList.join(
+          '',
+        )}`,
+      );
+      webFontStyleLink.setAttribute('id', 'webFontStyleLink');
+      document.head.appendChild(webFontStyleLink);
+    }
+
     const timers = [];
     const displayDurationInTotal = 3000;
     const typingDurationInTotal = 800;
@@ -53,7 +66,6 @@ export function Entrance() {
 
       heroTextJaList.push(text);
     };
-
     setText();
 
     timers[0] = setInterval(() => setText(), displayDurationInTotal);
