@@ -76,7 +76,7 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(_.chain(blogList).take(10).shuffle().take(4).value());
+    setPickups(_.flow(_.shuffle(),_.take(4))(blogList));
   }
 
   return (
