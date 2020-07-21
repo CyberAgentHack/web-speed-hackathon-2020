@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    publicPath: '/',
   },
 
   resolve: {
@@ -25,7 +26,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
-      inject: false,
     }),
   ],
 
