@@ -20,21 +20,16 @@ export default function Entrance() {
   const dispatch = useDispatch();
   const blogList = useSelector((state) => state.blogList.toJS());
   const [pickups, setPickups] = useState([]);
-  const [hasFetchFinished, setHasFetchFinished] = useState(false);
   const heroTextJaList = ['あみぶろ', '阿弥ぶろ', 'アミブロ'];
   const [heroTextJa, setHeroTextJa] = useState(heroTextJaList[0]);
 
   useEffect(() => {
-    setHasFetchFinished(false);
-
     (async () => {
       try {
         await fetchBlogList({ dispatch });
       } catch {
         await renderNotFound({ dispatch });
       }
-
-      setHasFetchFinished(true);
     })();
   }, [dispatch]);
 
@@ -70,14 +65,6 @@ export default function Entrance() {
         .forEach((timer) => clearTimeout(timer));
     };
   }, []);
-
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
 
   if (pickups.length === 0 && blogList.length !== 0) {
     setPickups(shuffle(blogList.slice(0, 10)).slice(0, 4));

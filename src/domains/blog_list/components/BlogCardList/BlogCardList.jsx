@@ -4,7 +4,8 @@ import { chunk } from '../../../../foundation/util_function/chunk';
 import { BlogCard } from '../BlogCard';
 
 export function BlogCardList({ list, columnCount }) {
-  const rows = chunk(list, columnCount);
+  const itemList = list.length ? list : [{}, {}, {}, {}];
+  const rows = chunk(itemList, columnCount);
 
   return (
     <div className="blog-list-BlogCardList">
