@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const ENV = process.env;
 
@@ -31,6 +32,9 @@ module.exports = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
+    }),
+    new MomentLocalesPlugin({
+      localesToKeep: ['ja'],
     }),
     ...(ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true'
       ? [
