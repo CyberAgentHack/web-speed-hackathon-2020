@@ -48,7 +48,7 @@ module.exports = {
 
   target: 'web',
 
-  devtool: 'inline-source-map',
+  devtool: 'cheap-source-map',
 
   mode: process.env.NODE_ENV,
 };
