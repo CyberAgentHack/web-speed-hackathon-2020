@@ -26,6 +26,7 @@ const baseConfig = {
       'react-dom': 'preact/compat',
       axios: 'redaxios',
       'axios-mock-adapter': path.resolve(__dirname, 'src', 'client', 'noop.js'),
+      bluebird: path.resolve(__dirname, 'src', 'client', 'noop.js'),
     },
   },
   plugins: [

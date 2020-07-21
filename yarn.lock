@@ -4331,11 +4331,6 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-or-bluebird@1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/native-or-bluebird/-/native-or-bluebird-1.2.0.tgz#39c47bfd7825d1fb9ffad32210ae25daadf101c9"
-  integrity sha1-OcR7/Xgl0fuf+tMiEK4l2q3xAck=
-
 negotiator@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
@@ -5125,13 +5120,6 @@ querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
-
-race-timeout@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/race-timeout/-/race-timeout-1.0.0.tgz#2c20c246662b9748aec1d7b4af4b90406e8f857e"
-  integrity sha1-LCDCRmYrl0iuwde0r0uQQG6PhX4=
-  dependencies:
-    native-or-bluebird "1"
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"

@@ -62,7 +62,6 @@
     "lodash.shuffle": "^4.2.0",
     "normalize.css": "^8.0.1",
     "preact": "^10.4.6",
-    "race-timeout": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
