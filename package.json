@@ -61,6 +61,7 @@
     "axios-mock-adapter": "^1.18.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
+    "dayjs": "^1.8.29",
     "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.1",
