@@ -17,6 +17,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    chunkFilename: '[name].[chunkhash].js',
   },
 
   resolve: {
@@ -24,7 +25,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.USE_MOCK_DATA': JSON.stringify(process.env.USE_MOCK_DATA),
@@ -34,6 +34,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
 
   module: {
