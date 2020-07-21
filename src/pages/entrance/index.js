@@ -1,1 +1,1 @@
-export { Entrance } from './Entrance';
+export { Entrance as default } from './Entrance';
