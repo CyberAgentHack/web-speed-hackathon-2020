@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <script
-      type="text/javascript"
-      src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"
-    ></script>
+    <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" async></script>
     <% } %>
-    <link rel="stylesheet" type="text/css" href="/app.css" />
+    <link rel="preload" as="style" href="/app.css" />
+    <link rel="stylesheet" href="/app.css" />
   </head>
   <body>
     <div id="root"></div>
