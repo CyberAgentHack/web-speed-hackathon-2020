@@ -12,7 +12,8 @@ const ENV = process.env;
 console.log(ENV.XXX_ENABLE_BUNDLE_ANALYZER);
 
 module.exports = {
-  mode: 'production',
+  mode:
+    ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true' ? 'development' : 'production',
 
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
