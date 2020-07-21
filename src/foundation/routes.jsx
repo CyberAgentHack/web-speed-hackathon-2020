@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -15,21 +15,19 @@ export function Routes() {
   }
 
   return (
-    <Suspense fallback={<div />}>
-      <Switch>
-        <Route exact path="/">
-          <Entrance />
-        </Route>
-        <Route exact path="/:blogId">
-          <BlogHome />
-        </Route>
-        <Route exact path="/:blogId/entry/:entryId">
-          <Entry />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-    </Suspense>
+    <Switch>
+      <Route exact path="/">
+        <Entrance />
+      </Route>
+      <Route exact path="/:blogId">
+        <BlogHome />
+      </Route>
+      <Route exact path="/:blogId/entry/:entryId">
+        <Entry />
+      </Route>
+      <Route path="*">
+        <NotFound />
+      </Route>
+    </Switch>
   );
 }
