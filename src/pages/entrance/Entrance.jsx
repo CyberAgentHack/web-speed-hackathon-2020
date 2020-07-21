@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import _ from 'lodash';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -10,6 +9,15 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
+
+const shuffle = ([...arr]) => {
+  let lastIndex = arr.length;
+  while (lastIndex > 0) {
+    const i = Math.floor(Math.random() * lastIndex--);
+    [arr[lastIndex], arr[i]] = [arr[i], arr[lastIndex]];
+  }
+  return arr;
+};
 
 export function Entrance() {
   const dispatch = useDispatch();
@@ -73,7 +81,7 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(_.chain(blogList).take(10).shuffle().take(4).value());
+    setPickups(shuffle(blogList.slice(0, 10)).slice(0, 4));
   }
 
   return (
@@ -91,7 +99,11 @@ export function Entrance() {
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src="/assets/amida.png" className="Entrance__hero-logo" alt="" />
+            <img
+              src="/assets/amida.png"
+              className="Entrance__hero-logo"
+              alt=""
+            />
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
