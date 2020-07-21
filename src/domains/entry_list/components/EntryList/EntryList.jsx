@@ -8,9 +8,10 @@ import { ProportionalImage } from '../../../../foundation/components/Proportiona
 export function EntryList({ blogId, list }) {
   return (
     <ul className="entry-list-EntryList">
-      {_.flow(
-        _.filter((entry) => entry.publish_flag === 'open'),
-        _.map((entry, i) => {
+      {
+        list
+        .filter((entry) => entry.publish_flag === 'open')
+        .map((entry, i) => {
           return (
             <li key={i} className="entry-list-EntryList__entry">
               <Link
@@ -37,7 +38,8 @@ export function EntryList({ blogId, list }) {
               </Link>
             </li>
           );
-        }))(list)}
+        })
+      }
     </ul>
   );
 }

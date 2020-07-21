@@ -73,7 +73,13 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(_.flow(_.shuffle(),_.take(4))(blogList));
+    const list = _.shuffle(
+      _.take(blogList, 10)
+    );
+
+    setPickups(
+      _.take(list, 4)
+    );
   }
 
   return (
