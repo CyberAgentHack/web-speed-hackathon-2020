@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:css build:webpack",
     "build:css": "postcss src/app.css -d dist",
-    "build:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js"
