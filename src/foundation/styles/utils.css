@@ -1,4 +1,14 @@
-@import 'suitcss-utils';
-@import '@zendeskgarden/css-utilities';
-@import '@zendeskgarden/css-buttons';
-@import '@zendeskgarden/css-forms';
+@import '~suitcss-utils-align/index.css';
+@import '~suitcss-utils-display/index.css';
+@import '~suitcss-utils-layout/index.css';
+@import '~suitcss-utils-link/index.css';
+@import '~suitcss-utils-position/index.css';
+@import '~suitcss-utils-size/index.css';
+@import '~suitcss-utils-text/index.css';
+@import '~suitcss-utils-flex/index.css';
+@import '~suitcss-utils-after/index.css';
+@import '~suitcss-utils-before/index.css';
+
+@import '~@zendeskgarden/css-utilities';
+@import '~@zendeskgarden/css-buttons';
+@import '~@zendeskgarden/css-forms';
