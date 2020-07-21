@@ -6,7 +6,7 @@ const importPlugin = require('postcss-import');
 const autoprefixer = require('autoprefixer');
 const customProperties = require('postcss-custom-properties');
 
-module.exports = {
+module.exports = (ctx) => ({
   plugins: [
     importPlugin({
       root: path.resolve(__dirname, 'src'),
@@ -17,5 +17,5 @@ module.exports = {
     customProperties(),
   ],
 
-  map: true,
-};
+  map: ctx.env !== 'production',
+});
