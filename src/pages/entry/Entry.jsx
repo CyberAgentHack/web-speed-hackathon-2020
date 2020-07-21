@@ -25,11 +25,8 @@ export default function Entry() {
   const blog = useSelector((state) => state.blog.toJS());
   const entry = useSelector((state) => state.entry.toJS());
   const commentList = useSelector((state) => state.commentList.toJS());
-  const [hasFetchFinished, setHasFetchFinished] = useState(false);
 
   useEffect(() => {
-    setHasFetchFinished(false);
-
     (async () => {
       try {
         await fetchBlog({ dispatch, blogId });
@@ -38,24 +35,16 @@ export default function Entry() {
       } catch {
         await renderNotFound({ dispatch });
       }
-
-      setHasFetchFinished(true);
     })();
   }, [dispatch, blogId, entryId]);
-
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
 
   return (
     <>
       <Helmet>
         <title>
-          {entry.title} - {blog.nickname} - Amida Blog: あみぶろ
+          {entry && blog
+            ? `${entry.title} - ${blog.nickname} - Amida Blog: あみぶろ`
+            : 'Amida Blog: あみぶろ'}
         </title>
       </Helmet>
       <div className="Entry">
@@ -71,7 +60,7 @@ export default function Entry() {
               />
             </header>
             <section>
-              <EntryView items={entry.items} />
+              <EntryView items={entry.items || []} />
             </section>
             <footer className="Entry__footer">
               <EntryFooter
@@ -86,7 +75,7 @@ export default function Entry() {
             <header className="Entry__comment-list-header">
               <h2>コメント一覧</h2>
             </header>
-            <CommentList list={commentList} />
+            <CommentList list={commentList || []} />
           </article>
         </Main>
       </div>
