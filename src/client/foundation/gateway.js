@@ -468,7 +468,10 @@ export async function fetch(path) {
 }
 
 export async function post(path, data) {
-  const requestWithTimeout = timeout(axios.post(path, data), TIMEOUT);
+  const requestWithTimeout = Promise.race([
+    axios.post(path, data),
+    new Promise((resolve) => setTimeout(() => resolve('timeout'), TIMEOUT)),
+  ]);
   const res = await requestWithTimeout;
 
   if (res.status !== 200) {
