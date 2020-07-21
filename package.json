@@ -1,6 +1,9 @@
 {
   "name": "web-speed-hackathon-online",
   "version": "0.0.1",
+  "browserslist": [
+    "last 3 Chrome versions"
+  ],
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
@@ -75,8 +78,8 @@
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "clean": "rimraf dist",
-    "fmt": "prettier --write 'src/**/*.{js,css}'",
     "fixpack": "npx fixpack",
+    "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec node lib/server.js",
     "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=460 --gc_interval=100 lib/server.js"
   }
