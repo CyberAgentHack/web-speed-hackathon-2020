@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dayjs from 'dayjs';
 
+import { dayjs } from '../../../../foundation/helpers/dayjs';
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
 export function EntryList({ blogId, list }) {

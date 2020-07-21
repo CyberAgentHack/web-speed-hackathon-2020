@@ -1,5 +1,5 @@
 import React from 'react';
-import dayjs from 'dayjs';
+import { dayjs } from '../../../../foundation/helpers/dayjs';
 import { Link } from 'react-router-dom';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';

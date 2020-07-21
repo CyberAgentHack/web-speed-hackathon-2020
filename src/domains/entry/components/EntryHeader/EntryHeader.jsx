@@ -1,6 +1,7 @@
 import React from 'react';
-import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
+
+import { dayjs } from '../../../../foundation/helpers/dayjs';
 
 export function EntryHeader({ title, publishedAt, location }) {
   return (

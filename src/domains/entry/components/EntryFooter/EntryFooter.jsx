@@ -1,7 +1,7 @@
 import React from 'react';
-import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 
+import { dayjs } from '../../../../foundation/helpers/dayjs';
 import { AmidaLikeButton } from '../AmidaLikeButton';
 import { TwitterShareButton } from '../TwitterShareButton';
 import { FacebookShareButton } from '../FacebookShareButton';
