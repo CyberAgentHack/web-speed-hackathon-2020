@@ -25,11 +25,8 @@ export function Entry() {
   const blog = useSelector((state) => state.blog.toJS());
   const entry = useSelector((state) => state.entry.toJS());
   const commentList = useSelector((state) => state.commentList.toJS());
-  const [hasFetchFinished, setHasFetchFinished] = useState(false);
 
   useEffect(() => {
-    setHasFetchFinished(false);
-
     (async () => {
       try {
         await fetchBlog({ dispatch, blogId });
@@ -38,18 +35,8 @@ export function Entry() {
       } catch {
         await renderNotFound({ dispatch });
       }
-
-      setHasFetchFinished(true);
     })();
   }, [dispatch, blogId, entryId]);
-
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
 
   return (
     <>
