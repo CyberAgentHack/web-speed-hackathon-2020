@@ -1,4 +1,4 @@
-import timeout from 'race-timeout';
+//import timeout from 'race-timeout';
 import axiosMod from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 
@@ -8,6 +8,30 @@ const API_ENDPOINT = window.location.origin;
 const axios = axiosMod.create({
   baseURL: API_ENDPOINT,
 });
+
+// https://github.com/lgmcolin/race-timeout/blob/master/index.js
+function timeout(interval) {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve('timeout');
+    }, interval || 0);
+  });
+}
+
+function RaceTimeout(task, interval) {
+  let longTask = Array.isArray(task) ? task : [task];
+
+  if (interval && typeof interval === 'number') {
+    longTask = longTask.concat(timeout(interval));
+  }
+
+  try {
+    return Promise.race(longTask);
+  } catch (err) {
+    console.log(err.stack);
+  }
+}
+//------------------------------------------------------------------------------
 
 export function setupMockAPIData() {
   const mock = new AxiosMockAdapter(axios, { delayResponse: 250 });
@@ -448,7 +472,7 @@ export function setupMockAPIData() {
 }
 
 export async function fetch(path) {
-  const requestWithTimeout = timeout(axios.get(path), TIMEOUT);
+  const requestWithTimeout = RaceTimeout(axios.get(path), TIMEOUT);
   const res = await requestWithTimeout;
 
   if (res === 'timeout') {
@@ -465,7 +489,7 @@ export async function fetch(path) {
 }
 
 export async function post(path, data) {
-  const requestWithTimeout = timeout(axios.post(path, data), TIMEOUT);
+  const requestWithTimeout = RaceTimeout(axios.post(path, data), TIMEOUT);
   const res = await requestWithTimeout;
 
   if (res.status !== 200) {
