@@ -11,9 +11,6 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
 
-import AmidaImage from '../../assets/amida.png';
-import Amida2Image from '../../assets/amida2.png';
-
 export function Entrance() {
   const dispatch = useDispatch();
   const blogList = useSelector((state) => state.blogList);
@@ -88,14 +85,27 @@ export function Entrance() {
         <section className="Entrance__hero">
           <div className="Entrance__hero-bg">
             <ProportionalImage
-              src={Amida2Image}
+              src="https://raw.githubusercontent.com/3846masa/web-speed-hackathon-online/user/3846masa/src/client/assets/amida2.png"
               alt=""
               width={1000}
               height={563}
+              unit={200}
+              maxWidth={1000}
+              sizes="100vw"
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src={AmidaImage} className="Entrance__hero-logo" alt="" />
+            <div className="Entrance__hero-logo">
+              <ProportionalImage
+                src="https://raw.githubusercontent.com/3846masa/web-speed-hackathon-online/user/3846masa/src/client/assets/amida.png"
+                alt=""
+                width={675}
+                height={800}
+                unit={45}
+                maxWidth={675}
+                sizes="100px"
+              />
+            </div>
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
