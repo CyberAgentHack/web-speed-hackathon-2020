@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="dns-prefetch" href="//fonts.gstatic.com/">
+  <link rel="dns-prefetch" href="//ryotasugawara.github.io/">
   <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
   <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" defer></script>
   <% } %>
