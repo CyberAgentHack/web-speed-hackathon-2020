@@ -1,6 +1,7 @@
 {
   "name": "web-speed-hackathon-online",
   "version": "0.0.1",
+  "author": "konnyaku256",
   "license": "Proprietary",
   "private": true,
   "scripts": {
