@@ -68,15 +68,7 @@ export function Entrance() {
     };
   }, []);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
-
-  if (pickups.length === 0 && blogList.length !== 0) {
+  if (hasFetchFinished && pickups.length === 0 && blogList.length !== 0) {
     setPickups(shuffle(blogList.slice(0, 10)).slice(0, 4));
   }
 
@@ -103,7 +95,7 @@ export function Entrance() {
           </div>
         </section>
 
-        <Main>
+        {hasFetchFinished ? <Main>
           <article className="Entrance__section Entrance__pickup">
             <h2 className="Entrance__title">Pickups</h2>
             <BlogCardList list={pickups} columnCount={4} />
@@ -112,7 +104,7 @@ export function Entrance() {
             <h2 className="Entrance__title">ブログ一覧</h2>
             <BlogCardList list={blogList} columnCount={4} />
           </article>
-        </Main>
+        </Main> : null}
       </div>
     </>
   );
