@@ -15,6 +15,10 @@ module.exports = {
     autoprefixer(),
 
     customProperties(),
+
+    require('cssnano')({
+      preset: 'default',
+    }),
   ],
 
   map: true,

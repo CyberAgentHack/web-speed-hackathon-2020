@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "license": "Proprietary",
   "private": true,
-  "browserslist": ["last 1 versions"],
+  "browserslist": [
+    "last 1 versions"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:css build:webpack",
@@ -17,6 +19,7 @@
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.3",
