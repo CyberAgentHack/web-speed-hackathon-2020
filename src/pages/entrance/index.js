@@ -1,1 +1,3 @@
-export { Entrance } from './Entrance';
+import { Entrance } from './Entrance';
+
+export default Entrance;
