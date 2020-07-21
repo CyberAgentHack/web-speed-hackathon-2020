@@ -1,7 +1,8 @@
 'use strict';
 
-const path = require('path');
+const { merge } = require('webpack-merge');
 
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -9,19 +10,13 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const ENV = process.env;
 
-console.log(ENV.XXX_ENABLE_BUNDLE_ANALYZER);
-
-module.exports = {
-  mode:
-    ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true' ? 'development' : 'production',
-
+const baseConfig = {
+  target: 'web',
   entry: path.resolve(__dirname, 'src', 'client', 'app.js'),
-
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
-
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
@@ -31,7 +26,6 @@ module.exports = {
       'axios-mock-adapter': path.resolve(__dirname, 'src', 'client', 'noop.js'),
     },
   },
-
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(ENV.NODE_ENV),
@@ -45,19 +39,7 @@ module.exports = {
     new MomentLocalesPlugin({
       localesToKeep: ['ja'],
     }),
-    ...(ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true'
-      ? [
-          new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-            reportFilename: path.resolve(__dirname, 'tmp', 'report.html'),
-            openAnalyzer: false,
-            generateStatsFile: true,
-            statsFilename: path.resolve(__dirname, 'tmp', 'stats.json'),
-          }),
-        ]
-      : []),
   ],
-
   module: {
     rules: [
       {
@@ -74,9 +56,28 @@ module.exports = {
       },
     ],
   },
-
-  target: 'web',
-
-  devtool:
-    ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true' ? 'inline-source-map' : false,
 };
+
+const devConfig = {
+  mode: 'development',
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: path.resolve(__dirname, 'tmp', 'report.html'),
+      openAnalyzer: false,
+      generateStatsFile: true,
+      statsFilename: path.resolve(__dirname, 'tmp', 'stats.json'),
+    }),
+  ],
+  devtool: 'inline-source-map',
+};
+
+const prodConfig = {
+  mode: 'production',
+  devtool: false,
+};
+
+module.exports = merge(
+  baseConfig,
+  ENV.XXX_DEBUG === 'true' ? devConfig : prodConfig,
+);
