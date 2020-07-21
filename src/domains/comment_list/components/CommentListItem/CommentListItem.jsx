@@ -1,5 +1,6 @@
 import React from 'react';
-import moment from 'moment-timezone';
+// import moment from 'moment-timezone';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { Link } from 'react-router-dom';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
@@ -21,10 +22,12 @@ export function CommentListItem({ comment }) {
         <footer className="comment-CommentListItem__footer">
           <Link to={`#comment-${comment.comment_id}`}>
             <time
-              dateTime={moment(comment.posted_at).toISOString(true)}
-              title={moment(comment.posted_at).toISOString(true)}
+              dateTime={new Date(comment.posted_at).toISOString()}
+              title={new Date(comment.posted_at).toISOString()}
             >
-              {moment(comment.posted_at).fromNow()}
+              {formatDistanceToNow(new Date(comment.posted_at), {
+                addSuffix: true,
+              })}
             </time>
           </Link>
         </footer>

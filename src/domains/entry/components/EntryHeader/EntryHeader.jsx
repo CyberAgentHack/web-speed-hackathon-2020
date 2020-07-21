@@ -1,8 +1,14 @@
 import React from 'react';
-import moment from 'moment-timezone';
+// import moment from 'moment-timezone';
 import { Link } from 'react-router-dom';
 
 export function EntryHeader({ title, publishedAt, location }) {
+  const date = new Date(publishedAt);
+
+  const y = date.getFullYear();
+  const m = `0${date.getMonth() + 1}`.slice(-2);
+  const d = `0${date.getDate()}`.slice(-2);
+
   return (
     <div className="entry-EntryHeader">
       <h2 className="entry-EntryHeader__title">
@@ -12,10 +18,10 @@ export function EntryHeader({ title, publishedAt, location }) {
       </h2>
       <time
         className="entry-EntryHeader__published-at"
-        dateTime={moment(publishedAt).toISOString(true)}
-        title={moment(publishedAt).toISOString(true)}
+        dateTime={date.toISOString()}
+        title={date.toISOString()}
       >
-        {moment(publishedAt).format('YYYY-MM-DD')}
+        {`${y}-${m}-${d}`}
       </time>
     </div>
   );

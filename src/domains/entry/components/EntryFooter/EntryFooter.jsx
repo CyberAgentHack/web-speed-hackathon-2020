@@ -1,5 +1,6 @@
 import React from 'react';
-import moment from 'moment-timezone';
+// import moment from 'moment-timezone';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { Link } from 'react-router-dom';
 
 import { AmidaLikeButton } from '../AmidaLikeButton';
@@ -11,8 +12,8 @@ export function EntryFooter({ location, likeCount, publishedAt, onClickLike }) {
   return (
     <div className="entry-EntryFooter">
       <Link to={location.pathname} className="entry-EntryFooter__published-at">
-        <time dateTime={moment(publishedAt).toISOString(true)}>
-          {moment(publishedAt).fromNow()}
+        <time dateTime={new Date(publishedAt).toISOString()}>
+          {formatDistanceToNow(new Date(publishedAt), { addSuffix: true })}
         </time>
       </Link>
       <div className="entry-EntryFooter__share">
