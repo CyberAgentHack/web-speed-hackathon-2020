@@ -56,6 +56,8 @@ module.exports = {
 
   target: 'web',
 
+  devtool: 'source-map',
+
   mode: 'none',
 
   optimization: {
