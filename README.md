@@ -1,4 +1,4 @@
-# WIC Speed Hachathon Online
+# WIC Speed Hackathon Online
 
 ## 概要
 
