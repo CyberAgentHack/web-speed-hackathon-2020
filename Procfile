@@ -1,1 +1,1 @@
-web: babel-node --config-file .backend.babelrc lib/server.js
+web: babel-node --config-file $PWD/.backend.babelrc lib/server.js
