@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" type="text/css" href="/app.css" />
+  </head>
+  <body>
+    <div id="root"></div>
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
     <script
       type="text/javascript"
       src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"
     ></script>
     <% } %>
-    <link rel="stylesheet" type="text/css" href="/app.css" />
-  </head>
-  <body>
-    <div id="root"></div>
   </body>
 </html>
