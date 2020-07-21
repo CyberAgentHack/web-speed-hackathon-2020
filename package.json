@@ -58,7 +58,6 @@
     "core-js": "^3.6.5",
     "dayjs": "^1.8.29",
     "express": "^4.17.1",
-    "immutable": "^4.0.0-rc.12",
     "lodash.chunk": "^4.2.0",
     "lodash.shuffle": "^4.2.0",
     "normalize.css": "^8.0.1",
