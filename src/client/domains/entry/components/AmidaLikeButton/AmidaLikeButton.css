@@ -25,3 +25,12 @@
 .entry-AmidaLikeButton__like-count {
   margin-left: var(--space);
 }
+
+.entry-AmidaLikeButton__svg {
+  overflow: visible;
+  width: 1em;
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  vertical-align: -0.125em;
+}
