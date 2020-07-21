@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import moment from 'moment-timezone';
 
@@ -8,7 +7,7 @@ import { ProportionalImage } from '../../../../foundation/components/Proportiona
 export function EntryList({ blogId, list }) {
   return (
     <ul className="entry-list-EntryList">
-      {_.chain(list)
+      {list
         .filter((entry) => entry.publish_flag === 'open')
         .map((entry, i) => {
           return (
