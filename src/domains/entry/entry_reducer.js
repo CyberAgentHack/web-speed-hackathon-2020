@@ -1,10 +1,9 @@
-import { fromJS, Map } from 'immutable';
 import { ACTION_ENTRY_FETCHED, ACTION_LIKE_UPDATED } from './entry_actions';
 
-export function entryReducer(state = Map(), action) {
+export function entryReducer(state = {}, action) {
   switch (action.type) {
     case ACTION_ENTRY_FETCHED: {
-      return fromJS(action.data.entry);
+      return action.data.entry;
     }
 
     case ACTION_LIKE_UPDATED: {

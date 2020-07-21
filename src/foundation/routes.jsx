@@ -8,7 +8,7 @@ import { Entry } from '../pages/entry';
 import { NotFound } from '../pages/not_found';
 
 export function Routes() {
-  const error = useSelector((state) => state.error.toJS());
+  const error = useSelector((state) => state.error);
 
   if (error.error !== undefined) {
     return <NotFound />;
