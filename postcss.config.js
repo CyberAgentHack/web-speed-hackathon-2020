@@ -21,5 +21,5 @@ module.exports = {
     }),
   ],
 
-  map: true,
+  map: false,
 };
