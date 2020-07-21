@@ -60,7 +60,7 @@
     "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment-timezone": "^0.5.28",
     "normalize.css": "^8.0.1",
     "race-timeout": "^1.0.0",
