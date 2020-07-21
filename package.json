@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:css build:webpack",
     "build:css": "postcss src/app.css -d dist",
-    "build:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.js --mode=production",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js"
@@ -16,6 +16,7 @@
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
