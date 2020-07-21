@@ -1,18 +1,21 @@
-import React from 'react';
-import moment from 'moment-timezone';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { AmidaLikeButton } from '../AmidaLikeButton';
 import { TwitterShareButton } from '../TwitterShareButton';
 import { FacebookShareButton } from '../FacebookShareButton';
 import { HatenaBookmarkButton } from '../HatenaBookmarkButton';
 
+dayjs.extend(relativeTime);
+
 export function EntryFooter({ location, likeCount, publishedAt, onClickLike }) {
   return (
     <div className="entry-EntryFooter">
       <Link to={location.pathname} className="entry-EntryFooter__published-at">
-        <time dateTime={moment(publishedAt).toISOString(true)}>
-          {moment(publishedAt).fromNow()}
+        <time dateTime={dayjs(publishedAt).format('YYYY-MM-DDTHH:mm:ss.SSSZ')}>
+          {dayjs(publishedAt).fromNow()}
         </time>
       </Link>
       <div className="entry-EntryFooter__share">

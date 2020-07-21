@@ -1,6 +1,6 @@
-import React from 'react';
-import moment from 'moment-timezone';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
 
 export function EntryHeader({ title, publishedAt, location }) {
   return (
@@ -12,10 +12,10 @@ export function EntryHeader({ title, publishedAt, location }) {
       </h2>
       <time
         className="entry-EntryHeader__published-at"
-        dateTime={moment(publishedAt).toISOString(true)}
-        title={moment(publishedAt).toISOString(true)}
+        dateTime={dayjs(publishedAt).format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
+        title={dayjs(publishedAt).format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
       >
-        {moment(publishedAt).format('YYYY-MM-DD')}
+        {dayjs(publishedAt).format('YYYY-MM-DD')}
       </time>
     </div>
   );
