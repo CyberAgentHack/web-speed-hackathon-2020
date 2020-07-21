@@ -68,12 +68,6 @@ module.exports = {
           name: 'framework',
           chunks: 'all',
           test: /[\\/]node_modules[\\/](react|react-dom|immutable)[\\/]/,
-          priority: 60,
-        },
-        font: {
-          name: 'font',
-          chunks: 'all',
-          test: /[\\/]node_modules[\\/](@fortawesome\/free-solid-svg-icons)[\\/]/,
           priority: 50,
         },
         time: {
