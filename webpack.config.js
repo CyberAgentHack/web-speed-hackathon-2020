@@ -57,4 +57,10 @@ module.exports = {
   target: 'web',
 
   mode: 'production',
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
