@@ -7,19 +7,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
+const CompressionPlugin = require('compression-webpack-plugin');
+const zlib = require('zlib');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
-
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
-
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
@@ -29,9 +28,27 @@ module.exports = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
+      scriptLoading: 'defer',
     }),
     new CopyPlugin({
       patterns: [{ from: 'src/assets', to: 'assets' }],
+    }),
+    new CompressionPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new CompressionPlugin({
+      filename: '[path].br[query]',
+      algorithm: 'brotliCompress',
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: {
+        level: 11,
+      },
+      threshold: 10240,
+      minRatio: 0.8,
     }),
     // new BundleAnalyzerPlugin(),
   ],
@@ -53,10 +70,7 @@ module.exports = {
       },
     ],
   },
-
   target: 'web',
-
   devtool: false,
-
   mode: 'production',
 };
