@@ -4,6 +4,9 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const IS_ANALYZE = process.env.NODE_ENV === 'analyze';
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -52,3 +55,9 @@ module.exports = {
 
   mode: 'none',
 };
+
+if (IS_ANALYZE) {
+  module.exports.plugins = [
+    new BundleAnalyzerPlugin()
+  ];
+}
