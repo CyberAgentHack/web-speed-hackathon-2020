@@ -51,6 +51,8 @@ module.exports = {
             analyzerMode: 'static',
             reportFilename: path.resolve(__dirname, 'tmp', 'report.html'),
             openAnalyzer: false,
+            generateStatsFile: true,
+            statsFilename: path.resolve(__dirname, 'tmp', 'stats.json'),
           }),
         ]
       : []),
