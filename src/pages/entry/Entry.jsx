@@ -18,7 +18,7 @@ import { EntryFooter } from '../../domains/entry/components/EntryFooter';
 import { fetchCommentList } from '../../domains/comment_list/comment_list_actions';
 import { CommentList } from '../../domains/comment_list/components/CommentList';
 
-export function Entry() {
+export default function Entry() {
   const location = useLocation();
   const { blogId, entryId } = useParams();
   const dispatch = useDispatch();

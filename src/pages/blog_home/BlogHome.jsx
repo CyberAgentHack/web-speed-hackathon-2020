@@ -13,7 +13,7 @@ import { EntryList } from '../../domains/entry_list/components/EntryList';
 
 import { Main } from '../../foundation/components/Main';
 
-export function BlogHome() {
+export default function BlogHome() {
   const { blogId } = useParams();
   const dispatch = useDispatch();
   const blog = useSelector((state) => state.blog.toJS());
