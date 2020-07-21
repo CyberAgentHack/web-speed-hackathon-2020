@@ -52,6 +52,10 @@ const baseConfig = {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: {
           loader: 'file-loader',
+          options: {
+            outputPath: 'images',
+            publicPath: '/images/',
+          },
         },
       },
     ],
