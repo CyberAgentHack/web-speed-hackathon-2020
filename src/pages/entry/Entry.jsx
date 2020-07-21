@@ -32,9 +32,19 @@ export function Entry() {
 
     (async () => {
       try {
-        await fetchBlog({ dispatch, blogId });
-        await fetchEntry({ dispatch, blogId, entryId });
-        await fetchCommentList({ dispatch, blogId, entryId });
+        const fetchRequestBlog = fetchBlog({ dispatch, blogId });
+        const fetchRequestEntry = fetchEntry({ dispatch, blogId, entryId });
+        const fetchRequestCommentList = fetchCommentList({
+          dispatch,
+          blogId,
+          entryId,
+        });
+
+        await Promise.all([
+          fetchRequestBlog,
+          fetchRequestEntry,
+          fetchRequestCommentList,
+        ]);
       } catch {
         await renderNotFound({ dispatch });
       }
