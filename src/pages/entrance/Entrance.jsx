@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import _ from 'lodash';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -10,6 +9,8 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
+import { take } from '../../foundation/helpers/take';
+import { shuffle } from '../../foundation/helpers/shuffle';
 
 import AmidaImage from '../../assets/amida.png';
 import Amida2Image from '../../assets/amida2.png';
@@ -76,7 +77,7 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(_.chain(blogList).take(10).shuffle().take(4).value());
+    setPickups(take(shuffle(take(blogList, 10)), 4));
   }
 
   return (
