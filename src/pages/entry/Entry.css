@@ -1,0 +1,15 @@
+.Entry__header {
+  margin: calc(var(--space) * 5) 0 calc(var(--space) * 2);
+}
+
+.Entry__footer {
+  margin-top: calc(var(--space) * 4);
+}
+
+.Entry__comment-list {
+  margin-top: calc(var(--space) * 5);
+}
+
+.Entry__comment-list-header {
+  margin-bottom: calc(var(--space) * 4);
+}

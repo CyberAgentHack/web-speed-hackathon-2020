@@ -1,0 +1,42 @@
+.NotFound {
+  position: absolute;
+  top: var(--height-global-header);
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - var(--height-global-header));
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.NotFound__inner {
+  margin: 0 auto;
+  padding: calc(var(--space) * 4);
+}
+
+.NotFound__title {
+  margin: calc(var(--space) * 10) 0;
+  font-size: 40px;
+  font-family: serif;
+}
+
+.NotFound__text {
+  margin: calc(var(--space) * 10) 0;
+  font-size: 40px;
+  font-family: serif;
+}
+
+.NotFound__img {
+  margin: 0 auto calc(var(--space) * 2);
+  display: block;
+}
+
+.NotFound__img-credit {
+  color: white;
+  font-size: var(--font-size-s);
+}
+
+.NotFound__img-author {
+  color: white;
+  font-size: var(--font-size-s);
+}

@@ -1,0 +1,1 @@
+export { AmidaLikeButton } from './AmidaLikeButton';

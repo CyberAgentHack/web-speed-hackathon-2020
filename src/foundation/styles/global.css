@@ -1,0 +1,33 @@
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+body {
+  background-color: var(--bg-regular);
+  font-family: var(--font-family);
+  font-size: var(--font-size-m);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: var(--line-height-default);
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+  color: inherit;
+}

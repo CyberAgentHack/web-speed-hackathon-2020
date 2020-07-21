@@ -1,0 +1,50 @@
+.entry-list-EntryList__entry-outer {
+  border-bottom: var(--border);
+  padding: calc(var(--space) * 4) calc(var(--space) * 4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--font-color-regular);
+  text-decoration: none;
+}
+
+.entry-list-EntryList__entry-container {
+  border-bottom: var(--border);
+  padding: calc(var(--space) * 4) calc(var(--space) * 4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--font-color-regular);
+  text-decoration: none;
+}
+
+.entry-list-EntryList__entry-inner {
+  border-bottom: var(--border);
+  padding: calc(var(--space) * 4) calc(var(--space) * 4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--font-color-regular);
+  text-decoration: none;
+}
+
+.entry-list-EntryList__entry:last-child .entry-list-EntryList__entry-inner {
+  border-bottom: none;
+}
+
+.entry-list-EntryList__entry-inner:hover {
+  opacity: 0.8;
+}
+
+.entry-list-EntryList__thumbnail {
+  width: 120px;
+}
+
+.entry-list-EntryList__image {
+  width: 120px;
+}
+
+.entry-list-EntryList__text {
+  margin-left: calc(var(--space) * 3);
+  line-height: var(--line-height-paragraph);
+}

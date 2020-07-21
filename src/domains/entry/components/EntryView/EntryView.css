@@ -1,0 +1,98 @@
+.entry-EntryView {
+  line-height: var(--line-height-paragraph);
+}
+
+.entry-EntryView__heading-1,
+.entry-EntryView__heading-2,
+.entry-EntryView__heading-3,
+.entry-EntryView__heading-4,
+.entry-EntryView__heading-5,
+.entry-EntryView__heading-6 {
+  margin-bottom: calc(var(--space) * 2);
+}
+
+.entry-EntryView__headline-1,
+.entry-EntryView__headline-2,
+.entry-EntryView__headline-3,
+.entry-EntryView__headline-4,
+.entry-EntryView__headline-5,
+.entry-EntryView__headline-6 {
+  margin-bottom: calc(var(--space) * 2);
+}
+
+.entry-EntryView__title-1,
+.entry-EntryView__title-2,
+.entry-EntryView__title-3,
+.entry-EntryView__title-4,
+.entry-EntryView__title-5,
+.entry-EntryView__title-6 {
+  margin-bottom: calc(var(--space) * 2);
+}
+
+.entry-EntryView__figure-container,
+.entry-EntryView__video,
+.entry-EntryView__embed {
+  display: block;
+  margin: calc(var(--space) * 3) auto;
+}
+
+.entry-EntryView__image-container {
+  text-align: center;
+}
+
+.entry-EntryView__image-link {
+  display: inline-block;
+  margin: 0 auto;
+  border: var(--border);
+  padding: calc(var(--space) * 2);
+  color: black;
+  text-decoration: none;
+}
+
+.entry-EntryView__image {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.entry-EntryView__image-caption {
+  font-size: var(--font-size-s);
+  margin-top: calc(var(--space) * 2);
+  text-align: center;
+}
+
+.entry-EntryView__figure-container {
+  text-align: center;
+}
+
+.entry-EntryView__figure-link {
+  display: inline-block;
+  margin: 0 auto;
+  border: var(--border);
+  padding: calc(var(--space) * 2);
+  color: black;
+  text-decoration: none;
+}
+
+.entry-EntryView__figure {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.entry-EntryView__figcaption {
+  font-size: var(--font-size-s);
+  margin-top: calc(var(--space) * 2);
+  text-align: center;
+}
+
+.entry-EntryView__caption {
+  font-size: var(--font-size-s);
+  margin-top: calc(var(--space) * 2);
+  text-align: center;
+}
+
+.entry-EntryView__embed {
+  display: flex;
+  justify-content: center;
+}

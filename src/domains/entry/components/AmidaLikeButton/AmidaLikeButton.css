@@ -1,0 +1,27 @@
+.entry-AmidaLikeButton {
+  border: var(--border);
+  border-radius: 3px;
+  padding: 0 calc(var(--space) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.entry-AmidaLikeButton_inner {
+  border: var(--border);
+  border-radius: 3px;
+  padding: 0 calc(var(--space) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.entry-AmidaLikeButton__count {
+  margin-left: var(--space);
+}
+
+.entry-AmidaLikeButton__like-count {
+  margin-left: var(--space);
+}

@@ -1,0 +1,29 @@
+.entry-EntryFooter {
+  border-top: var(--border);
+  padding-top: calc(var(--space) * 4);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.entry-EntryFooter__sns {
+  margin: 0 0 calc(var(--space) * 2);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.entry-EntryFooter__sns-item {
+  margin-left: calc(var(--space) * 2);
+}
+
+.entry-EntryFooter__share {
+  margin: 0 0 calc(var(--space) * 2);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.entry-EntryFooter__share-item {
+  margin-left: calc(var(--space) * 2);
+}

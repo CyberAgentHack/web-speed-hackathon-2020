@@ -1,0 +1,1 @@
+export { ProportionalImage } from './ProportionalImage';

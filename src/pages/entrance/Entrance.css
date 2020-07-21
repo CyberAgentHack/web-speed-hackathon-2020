@@ -1,0 +1,125 @@
+.Entrance__hero {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-color: #eee;
+}
+
+.Entrance__hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.Entrance__hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.Entrance__hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.Entrance__hero-contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.Entrance__hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.Entrance__hero-logo {
+  width: 100px;
+}
+
+.Entrance__hero-title {
+  margin-left: calc(var(--var) * 5);
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-paragraph);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Entrance__hero-title-en {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.Entrance__hero-title-ja {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.Entrance__hero-text {
+  margin-left: calc(var(--var) * 5);
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-paragraph);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Entrance__hero-text-en {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.Entrance__hero-text-ja {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.Entrance__title {
+  margin-bottom: calc(var(--space) * 3);
+}
+
+.Entrance__pickup > .Entrance__title {
+  color: orange;
+}
+
+.Entrance__section {
+  margin-top: calc(var(--space) * 6);
+}
+
+.Entrance__section:not(:last-child) {
+  margin-bottom: calc(var(--space) * 6);
+}

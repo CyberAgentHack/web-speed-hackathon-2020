@@ -1,0 +1,27 @@
+.foundation-GlobalHeader {
+  height: var(--height-global-header);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 calc(var(--space) * 2);
+}
+
+.foundation-GlobalHeader__link {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.foundation-GlobalHeader__en {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.foundation-GlobalHeader__ja {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+  flex-shrink: 0;
+}

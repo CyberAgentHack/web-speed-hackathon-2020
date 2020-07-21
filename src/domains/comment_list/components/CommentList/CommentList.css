@@ -1,0 +1,3 @@
+.comment-CommentList__item:not(:last-child) {
+  margin-bottom: calc(var(--space) * 5);
+}

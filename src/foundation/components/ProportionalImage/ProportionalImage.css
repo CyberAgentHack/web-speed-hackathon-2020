@@ -1,0 +1,48 @@
+.foundation-ProportionalImage__outer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.foundation-ProportionalImage {
+  position: relative;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.foundation-ProportionalImage__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.foundation-ProportionalImage__img {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.foundation-ProportionalImage__image {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.foundation-ProportionalImage--rounded-as-card-thumbnail,
+.foundation-ProportionalImage--rounded-as-card-thumbnail
+  .foundation-ProportionalImage__inner,
+.foundation-ProportionalImage--rounded-as-card-thumbnail
+  .foundation-ProportionalImage__img,
+.foundation-ProportionalImage--rounded-as-card-thumbnail
+  .foundation-ProportionalImage__image {
+  border-radius: 4px 4px 0 0;
+}

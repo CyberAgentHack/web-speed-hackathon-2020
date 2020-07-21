@@ -1,0 +1,26 @@
+.entry-EntryHeader {
+  padding-bottom: calc(var(--space) * 3);
+  border-bottom: var(--border);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.entry-EntryHeader__title-link {
+  color: black;
+  text-decoration: none;
+}
+
+.entry-EntryHeader__heading-link {
+  color: black;
+  text-decoration: none;
+}
+
+.entry-EntryHeader__published {
+  flex-shrink: 0;
+}
+
+.entry-EntryHeader__published-at {
+  flex-shrink: 0;
+}

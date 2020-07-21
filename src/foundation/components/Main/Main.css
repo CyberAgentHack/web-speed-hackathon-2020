@@ -1,0 +1,4 @@
+.foundation-Main {
+  margin: 0 auto calc(var(--space) * 5);
+  width: 80%;
+}

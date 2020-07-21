@@ -1,0 +1,1 @@
+export { FacebookShareButton } from './FacebookShareButton';

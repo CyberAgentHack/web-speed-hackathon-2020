@@ -1,0 +1,1 @@
+export { EntryFooter } from './EntryFooter';

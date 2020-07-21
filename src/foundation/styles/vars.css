@@ -1,0 +1,21 @@
+:root {
+  --space: 4px;
+
+  --font-size-title: 30px;
+
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-s: 12px;
+
+  --font-color-regular: black;
+
+  -font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
+
+  --line-height-default: 1;
+  --line-height-paragraph: 1.7;
+
+  --border: 1px #ddd solid;
+
+  --height-global-header: 44px;
+}
