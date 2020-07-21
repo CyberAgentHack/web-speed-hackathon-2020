@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useStore, useSelector, useDispatch } from 'react-redux';
+
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -15,17 +16,21 @@ const AmidaImage = React.lazy(() =>
   import('../../foundation/components/AmidaImage/AmidaImage'),
 );
 import Amida2Image from '../../assets/amida2.png';
+import { blogListReducer } from '../../domains/blog_list/blog_list_reducer';
 
 export default function Entrance() {
   const dispatch = useDispatch();
-  const blogList = useSelector((state) => state.blogList.toJS());
+  const blogListRedux = useSelector((state) => state.blogList);
   const [pickups, setPickups] = useState([]);
   const heroTextJaList = ['あみぶろ', '阿弥ぶろ', 'アミブロ'];
   const [heroTextJa, setHeroTextJa] = useState(heroTextJaList[0]);
+  const store = useStore();
+  const blogList = blogListRedux ? blogListRedux.toJS() : [];
 
   useEffect(() => {
     (async () => {
       try {
+        store.injectReducer('blogList', blogListReducer);
         await fetchBlogList({ dispatch });
       } catch {
         await renderNotFound({ dispatch });
@@ -66,7 +71,7 @@ export default function Entrance() {
     };
   }, []);
 
-  if (pickups.length === 0 && blogList.length !== 0) {
+  if (pickups.length === 0 && blogList !== undefined && blogList.length !== 0) {
     setPickups(shuffle(blogList.slice(0, 10)).slice(0, 4));
   }
 

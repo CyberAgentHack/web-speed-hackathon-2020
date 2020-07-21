@@ -4,6 +4,8 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 module.exports = (env, { mode }) => {
   return {
@@ -45,6 +47,10 @@ module.exports = (env, { mode }) => {
           },
         },
       ],
+    },
+
+    optimization: {
+      usedExports: true,
     },
 
     target: 'web',
