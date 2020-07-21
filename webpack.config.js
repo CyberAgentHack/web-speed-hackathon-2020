@@ -48,7 +48,7 @@ module.exports = {
 
   target: 'web',
 
-  devtool: 'inline-source-map',
+  devtool: process.env.NODE_ENV !== 'production' ? 'inline-source-map' : false,
 
   mode: 'none',
 };
