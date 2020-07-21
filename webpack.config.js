@@ -4,6 +4,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -27,7 +28,8 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
     }),
-  ],
+    process.env.NODE_ENV !== 'production' ? new BundleAnalyzerPlugin() : false,
+  ].filter(Boolean),
 
   module: {
     rules: [
