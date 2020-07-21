@@ -15,7 +15,7 @@ module.exports = {
   mode:
     ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true' ? 'development' : 'production',
 
-  entry: path.resolve(__dirname, 'src', 'app.js'),
+  entry: path.resolve(__dirname, 'src', 'client', 'app.js'),
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -28,7 +28,7 @@ module.exports = {
       react: 'preact/compat',
       'react-dom': 'preact/compat',
       axios: 'redaxios',
-      'axios-mock-adapter': path.resolve(__dirname, 'src', 'noop.js'),
+      'axios-mock-adapter': path.resolve(__dirname, 'src', 'client', 'noop.js'),
     },
   },
 
@@ -39,7 +39,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Amida Blog: あみぶろ',
-      template: path.resolve(__dirname, 'src', 'index.html'),
+      template: path.resolve(__dirname, 'src', 'client', 'index.html'),
       inject: false,
     }),
     new MomentLocalesPlugin({

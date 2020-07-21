@@ -9,7 +9,7 @@ const customProperties = require('postcss-custom-properties');
 module.exports = {
   plugins: [
     importPlugin({
-      root: path.resolve(__dirname, 'src'),
+      root: path.resolve(__dirname, 'src', 'client'),
     }),
 
     autoprefixer(),
