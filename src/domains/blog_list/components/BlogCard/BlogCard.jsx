@@ -10,6 +10,7 @@ export function BlogCard({ blog }) {
         <ProportionalImage
           src={blog.image}
           alt=""
+          loading="lazy"
           boxAspectRatio={9 / 16}
           roundedAsCardThumbnail
         />
