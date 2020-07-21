@@ -4,8 +4,14 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const safePostCssParser = require('postcss-safe-parser');
 
 module.exports = {
+  target: 'web',
+  mode: 'production',
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
   output: {
@@ -27,6 +33,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
     }),
+    new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
   ],
 
   module: {
@@ -43,12 +50,49 @@ module.exports = {
           loader: 'url-loader',
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
 
-  target: 'web',
+  optimization: {
+    minimizer: [
+      new TerserPlugin(),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          parser: safePostCssParser,
+          map: false,
+        },
+        cssProcessorPluginOptions: {
+          preset: ['default', { minifyFontValues: { removeQuotes: false } }],
+        },
+      }),
+    ],
 
-  devtool: 'inline-source-map',
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          priority: -10,
+          test: /[\\/]node_modules[\\/]/,
+        },
+      },
 
-  mode: 'none',
+      chunks: 'async',
+      minChunks: 1,
+      minSize: 30000,
+      name: true,
+    },
+  },
 };
