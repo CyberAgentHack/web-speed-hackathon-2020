@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -18,11 +18,8 @@ export default function BlogHome() {
   const dispatch = useDispatch();
   const blog = useSelector((state) => state.blog.toJS());
   const entryList = useSelector((state) => state.entryList.toJS());
-  const [hasFetchFinished, setHasFetchFinished] = useState(false);
 
   useEffect(() => {
-    setHasFetchFinished(false);
-
     (async () => {
       try {
         await fetchBlog({ dispatch, blogId });
@@ -30,23 +27,17 @@ export default function BlogHome() {
       } catch {
         await renderNotFound({ dispatch });
       }
-
-      setHasFetchFinished(true);
     })();
   }, [dispatch, blogId]);
-
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
 
   return (
     <>
       <Helmet>
-        <title>{blog.nickname} - Amida Blog: あみぶろ</title>
+        <title>
+          {blog === undefined
+            ? 'Amida Blog: あみぶろ'
+            : `${blog.nickname} - Amida Blog: あみぶろ`}
+        </title>
       </Helmet>
       <div className="BlogHome">
         <BlogHeader blog={blog} />
