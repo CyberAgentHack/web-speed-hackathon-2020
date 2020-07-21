@@ -29,7 +29,7 @@ module.exports = {
       inject: false,
     }),
     new CopyPlugin({
-      patterns: [{ from: 'src/assets', to: 'dist' }],
+      patterns: [{ from: 'src/assets', to: 'assets' }],
     }),
   ],
 
