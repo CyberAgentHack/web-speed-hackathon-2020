@@ -10,7 +10,7 @@ const axios = axiosMod.create({
 });
 
 export function setupMockAPIData() {
-  const mock = new AxiosMockAdapter(axios, { delayResponse: 250 });
+  const mock = new AxiosMockAdapter(axios, { delayResponse: 1 });
 
   mock.onGet('/api/blogs').reply(200, {
     data: [
