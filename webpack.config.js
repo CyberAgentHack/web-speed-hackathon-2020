@@ -40,10 +40,10 @@ module.exports = {
 			filename: 'app.css',
 		}),
 		// new BundleAnalyzerPlugin(),
-		// new webpack.NormalModuleReplacementPlugin(
-		// 	/moment-timezone\/data\/packed\/latest\.json/,
-		// 	require.resolve('./misc/timezone-definitions'),
-		// ),
+		new webpack.NormalModuleReplacementPlugin(
+			/moment-timezone\/data\/packed\/latest\.json/,
+			require.resolve('./misc/timezone-definitions'),
+		),
 	],
 
 	module: {
