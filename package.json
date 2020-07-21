@@ -16,6 +16,7 @@
     "serve": "nodemon --exec babel-node lib/server.js"
   },
   "devDependencies": {
+    "@loadable/component": "^5.13.1",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
