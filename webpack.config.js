@@ -50,5 +50,5 @@ module.exports = {
 
   devtool: 'inline-source-map',
 
-  mode: 'none',
+  mode: 'production',
 };
