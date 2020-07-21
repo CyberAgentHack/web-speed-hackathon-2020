@@ -58,6 +58,7 @@
     "axios": "^0.19.2",
     "axios-mock-adapter": "^1.18.1",
     "classnames": "^2.2.6",
+    "copy-webpack-plugin": "^6.0.3",
     "core-js": "^3.6.4",
     "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",

@@ -4,6 +4,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -26,6 +27,9 @@ module.exports = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/assets', to: 'assets' }],
     }),
   ],
 

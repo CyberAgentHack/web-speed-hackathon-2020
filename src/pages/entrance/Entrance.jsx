@@ -11,9 +11,6 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
 
-import AmidaImage from '../../assets/amida.png';
-import Amida2Image from '../../assets/amida2.png';
-
 export function Entrance() {
   const dispatch = useDispatch();
   const blogList = useSelector((state) => state.blogList.toJS());
@@ -88,13 +85,17 @@ export function Entrance() {
         <section className="Entrance__hero">
           <div className="Entrance__hero-bg">
             <ProportionalImage
-              src={Amida2Image}
+              src="/assets/amida2.png"
               alt=""
               boxAspectRatio={9 / 16}
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src={AmidaImage} className="Entrance__hero-logo" alt="" />
+            <img
+              src="/assets/amida.png"
+              className="Entrance__hero-logo"
+              alt=""
+            />
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
