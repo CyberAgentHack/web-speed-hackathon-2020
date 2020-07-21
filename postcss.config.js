@@ -11,10 +11,11 @@ module.exports = {
     importPlugin({
       root: path.resolve(__dirname, 'src'),
     }),
-
     autoprefixer(),
-
     customProperties(),
+    require('cssnano')({
+      preset: 'default',
+    }),
   ],
 
   map: true,
