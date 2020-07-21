@@ -74,15 +74,15 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin(),
-      // new OptimizeCSSAssetsPlugin({
-      //   cssProcessorOptions: {
-      //     parser: safePostCssParser,
-      //     map: false,
-      //   },
-      //   cssProcessorPluginOptions: {
-      //     preset: ['default', { minifyFontValues: { removeQuotes: false } }],
-      //   },
-      // }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          parser: safePostCssParser,
+          map: false,
+        },
+        cssProcessorPluginOptions: {
+          preset: ['default', { minifyFontValues: { removeQuotes: false } }],
+        },
+      }),
     ],
 
     splitChunks: {
