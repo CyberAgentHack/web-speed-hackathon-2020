@@ -28,6 +28,7 @@
     "lodash": "^4.17.15",
     "moment-timezone": "^0.5.28",
     "normalize.css": "^8.0.1",
+    "preact": "^10.4.6",
     "race-timeout": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
