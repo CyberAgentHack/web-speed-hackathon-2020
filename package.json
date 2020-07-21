@@ -76,6 +76,7 @@
   },
   "private": true,
   "scripts": {
+    "analyze": "yarn run -s build:webpack --profile --json > analyze.json && npx webpack-bundle-analyzer analyze.json",
     "build": "npm-run-all clean build:css build:webp build:webpack",
     "build:css": "postcss src/app.css -d dist",
     "build:webp": "cp src/assets/*.webp dist",
