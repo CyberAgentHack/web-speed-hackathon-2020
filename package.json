@@ -6,13 +6,14 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:css build:webpack",
-    "build:prod": "npm-run-all clean build:css build:webpack",
+    "build:dev": "npm-run-all clean build:css build:webpack:dev",
     "build:css": "postcss src/app.css -d dist",
     "build:webpack:dev": "cross-env NODE_ENV=devlopment webpack --config webpack.config.js",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=production webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
-    "serve": "nodemon --exec babel-node lib/server.js"
+    "serve": "nodemon --exec babel-node lib/server.js",
+    "start": "npm-run-all build serve"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -62,7 +63,6 @@
     "core-js": "^3.6.4",
     "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",
-    "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "moment-timezone": "^0.5.28",
     "normalize.css": "^8.0.1",
