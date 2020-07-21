@@ -16,7 +16,7 @@ export function NotFound() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          By William Wolfgang Wunderbar (giphy.com)
+          By William Wolfgang Wunderbar (giphy.com)igarashi
         </a>
       </div>
     </Main>
