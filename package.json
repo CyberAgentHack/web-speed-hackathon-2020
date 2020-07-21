@@ -11,7 +11,7 @@
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js",
-    "start": "babel-node lib/server.js"
+    "start": "NODE_ENV=production babel-node --optimize_for_size --max_old_space_size=460 --gc_interval=100 lib/server.js"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
