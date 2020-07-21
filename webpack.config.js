@@ -77,5 +77,6 @@ module.exports = {
 
   target: 'web',
 
-  devtool: 'inline-source-map',
+  devtool:
+    ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true' ? 'inline-source-map' : false,
 };
