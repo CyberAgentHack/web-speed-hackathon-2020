@@ -5,6 +5,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
@@ -56,4 +58,12 @@ module.exports = {
 
   // mode: 'none',
 
+  optimization: {
+    minimizer: [
+      new TerserWebpackPlugin({
+        extractComments: true,
+        terserOptions: {},
+      }),
+    ],
+  },
 };

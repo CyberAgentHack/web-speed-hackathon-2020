@@ -60,6 +60,7 @@
     "postcss-import": "^12.0.1",
     "prettier": "^2.0.1",
     "rimraf": "^3.0.2",
+    "terser-webpack-plugin": "^3.0.7",
     "url-loader": "^4.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
@@ -83,8 +84,8 @@
     "build": "npm-run-all clean build:css build:webp build:webpack",
     "build:css": "postcss src/app.css -d dist",
     "build:webp": "cp src/assets/*.webp dist",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
+    "build:webpack": "cross-env NODE_ENV=production webpack --mode production --config webpack.config.js",
+    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --mode development --config webpack.config.js",
     "clean": "rimraf dist",
     "fixpack": "npx fixpack",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
