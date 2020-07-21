@@ -68,5 +68,5 @@ module.exports = {
 
   devtool: 'inline-source-map',
 
-  mode: 'production',
+  mode: process.env.NODE_ENV,
 };
