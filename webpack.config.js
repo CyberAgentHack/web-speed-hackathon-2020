@@ -51,4 +51,8 @@ module.exports = {
   devtool: 'inline-source-map',
 
   mode: 'none',
+
+  optimization: {
+    minimize: true
+  }
 };
