@@ -7,6 +7,7 @@ const API_ENDPOINT = window.location.origin;
 
 const axios = axiosMod.create({
   baseURL: API_ENDPOINT,
+  responseType: 'json',
 });
 
 export function setupMockAPIData() {
