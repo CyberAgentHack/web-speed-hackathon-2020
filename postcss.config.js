@@ -17,5 +17,5 @@ module.exports = {
     customProperties(),
   ],
 
-  map: true,
+  map: process.env.NODE_ENV !== 'production',
 };
