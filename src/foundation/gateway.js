@@ -448,6 +448,17 @@ export function setupMockAPIData() {
 }
 
 export async function fetch(path) {
+  if (
+    path === '/api/blogs' ||
+    path.match(/^\/api\/blog\/\w+$/) ||
+    path.match(/^\/api\/blog\/\w+\/entries$/) ||
+    path.match(/^\/api\/blog\/\w+\/entry\/\w+$/) ||
+    path.match(/^\/api\/blog\/\w+\/entry\/\w+\/comments$/) ||
+    path.match(/^\/api\/blog\/\w+\/entry\/\w+\/comments\/\w+$/)
+  ) {
+    throw new Error(`Error: error`);
+  }
+
   const requestWithTimeout = timeout(axios.get(path), TIMEOUT);
   const res = await requestWithTimeout;
 
