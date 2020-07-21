@@ -43,9 +43,15 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
-        use: {
-          loader: 'url-loader',
-        },
+        loader: 'file-loader',
+        options: {
+          name(file) {
+            if (!IS_PRODUCTION) {
+              return 'img/[path][name].[ext]';
+            }
+            return 'img/[hash].[ext]';
+          }
+        }
       },
     ],
   },
