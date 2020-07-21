@@ -1,6 +1,5 @@
 @import './foundation/styles/vars.css';
 @import './foundation/styles/global.css';
-@import './foundation/styles/utils.css';
 @import './foundation/components/foundation_components.css';
 @import './domains/domains.css';
 @import './pages/pages.css';

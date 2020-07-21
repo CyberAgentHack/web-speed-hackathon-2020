@@ -1096,32 +1096,6 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@zendeskgarden/css-buttons@^7.0.19":
-  version "7.0.19"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/css-buttons/-/css-buttons-7.0.19.tgz#8755e54bd9e0cf472dddf2b8041d05cd03b78bf6"
-  integrity sha512-Fv+vDvwwsf2SIoqxKPbg5hXPnYlqJ74ZCat9k9TvxAkz+BW8ufQlKksSzztfVBKRIJNJR4IQoEL9Yz7GPBl3xw==
-  dependencies:
-    "@zendeskgarden/css-variables" "^6.4.5"
-
-"@zendeskgarden/css-forms@^7.0.20":
-  version "7.0.20"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/css-forms/-/css-forms-7.0.20.tgz#0c305663ec1d7e2c32c1209f2b2e0fbd2f3cd27b"
-  integrity sha512-afgvzgKd5wTpffscj3QnJgMEJtv+xsNqrslhMWjaQTp0aysjeZ+SHYQZLS/Sh9XV7ecqEP8tuentelxwShfstQ==
-  dependencies:
-    "@zendeskgarden/css-variables" "^6.4.5"
-
-"@zendeskgarden/css-utilities@^4.5.5":
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/css-utilities/-/css-utilities-4.5.5.tgz#f0c4099af660894494126f5edfed40d732cfa53b"
-  integrity sha512-68sFP8aJBcEY/TfT2y5qmsq28f8imRxj8k2yK3+SSFDJvhIyp9IO1ZrQF/2+O5ZAIVKq2cdV7WZkLt5n4vllvA==
-  dependencies:
-    "@zendeskgarden/css-variables" "^6.4.5"
-
-"@zendeskgarden/css-variables@^6.4.5":
-  version "6.4.5"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/css-variables/-/css-variables-6.4.5.tgz#b51a50046f42a11b8d1bfec46e100b02fd6fc1d9"
-  integrity sha512-vX7vDJVQoyYFUshYXXX5QE2fL9M6K2bnxTeB2IVyEIaGRYEi20xjoY6cuO1uAQ7RaIRGCSyZFKgWW+/IrlQMKg==
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -6878,79 +6852,6 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
-
-suitcss-utils-after@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-after/-/suitcss-utils-after-1.0.1.tgz#23086dc0a1151f236de33a4c696a7b83412f02d4"
-  integrity sha1-IwhtwKEVHyNt4zpMaWp7g0EvAtQ=
-
-suitcss-utils-align@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-align/-/suitcss-utils-align-1.0.0.tgz#8bf2b96b42c7386bc7ba3adbf14e7e6fcdd796cb"
-  integrity sha1-i/K5a0LHOGvHujrb8U5+b83Xlss=
-
-suitcss-utils-before@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-before/-/suitcss-utils-before-1.0.1.tgz#977f1b46b65db140571ebe5f767a12a4a7bc4931"
-  integrity sha1-l38bRrZdsUBXHr5fdnoSpKe8STE=
-
-suitcss-utils-display@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-display/-/suitcss-utils-display-1.0.2.tgz#cb6a4e756eab9aefb149f3e4618c76d02bbab47f"
-  integrity sha1-y2pOdW6rmu+xSfPkYYx20Cu6tH8=
-
-suitcss-utils-flex@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-flex/-/suitcss-utils-flex-2.0.1.tgz#7ddc146bb0b8d52e5181257c7f4329c495b00c5f"
-  integrity sha512-81y7h4O8vvE54oDneSPQGmWctmtC6a4p536wMCzUKknV3VjNFBD3IBOsqImVBkXhHrIeoCvtvgIWx+TyR3zzHg==
-
-suitcss-utils-layout@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-layout/-/suitcss-utils-layout-1.0.1.tgz#a6a0a3d857164b8bbe9dd7f438cc01bc178b0aac"
-  integrity sha1-pqCj2FcWS4u+ndf0OMwBvBeLCqw=
-
-suitcss-utils-link@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-link/-/suitcss-utils-link-1.0.1.tgz#93f48a5261f97a2c7b4bdcb8ecece227cbf3c96c"
-  integrity sha1-k/SKUmH5eix7S9y47OziJ8vzyWw=
-
-suitcss-utils-offset@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-offset/-/suitcss-utils-offset-1.0.0.tgz#0232b12207bd6419a837a2e4f2b4a23798e087e2"
-  integrity sha1-AjKxIge9ZBmoN6Lk8rSiN5jgh+I=
-  dependencies:
-    suitcss-utils-after "^1.0.0"
-    suitcss-utils-before "^1.0.0"
-
-suitcss-utils-position@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-position/-/suitcss-utils-position-1.0.1.tgz#28c602f3be756e9330956ad06aab04de7945c4dd"
-  integrity sha1-KMYC8751bpMwlWrQaqsE3nlFxN0=
-
-suitcss-utils-size@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-size/-/suitcss-utils-size-2.0.1.tgz#37b74154fad4b885b41eaad97e7fafdcc598b852"
-  integrity sha512-nSwISX0SIgA0vP0YzbrXU2CBKUfUv/iKfGuUeZDE4zDn/b/Byrxuhp+hi9epyjVRgs02s2z9LtcuYh7lm8wSRw==
-
-suitcss-utils-text@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/suitcss-utils-text/-/suitcss-utils-text-1.0.0.tgz#d36f83f4298952db51abad584bfab2773bb389b8"
-  integrity sha1-02+D9CmJUttRq61YS/qydzuzibg=
-
-suitcss-utils@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/suitcss-utils/-/suitcss-utils-3.0.0.tgz#bd13642a74410a508692e3b91d3859597c4afba6"
-  integrity sha1-vRNkKnRBClCGkuO5HThZWXxK+6Y=
-  dependencies:
-    suitcss-utils-align "^1.0.0"
-    suitcss-utils-display "^1.0.2"
-    suitcss-utils-flex "^2.0.0"
-    suitcss-utils-layout "^1.0.1"
-    suitcss-utils-link "^1.0.1"
-    suitcss-utils-offset "^1.0.0"
-    suitcss-utils-position "^1.0.1"
-    suitcss-utils-size "^2.0.0"
-    suitcss-utils-text "^1.0.0"
 
 supports-color@6.1.0, supports-color@^6.1.0:
   version "6.1.0"

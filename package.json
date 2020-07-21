@@ -50,9 +50,6 @@
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
-    "@zendeskgarden/css-buttons": "^7.0.19",
-    "@zendeskgarden/css-forms": "^7.0.20",
-    "@zendeskgarden/css-utilities": "^4.5.5",
     "axios": "^0.19.2",
     "axios-mock-adapter": "^1.18.1",
     "classnames": "^2.2.6",
@@ -70,7 +67,6 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
-    "suitcss-utils": "^3.0.0",
     "webpack-bundle-analyzer": "^3.8.0"
   }
 }
