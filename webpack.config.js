@@ -36,6 +36,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.NormalModuleReplacementPlugin(
+      /moment-timezone\/data\/packed\/latest\.json/,
+      require.resolve('./src/utils/moment/latest.json'),
+    ),
   ],
 
   module: {
