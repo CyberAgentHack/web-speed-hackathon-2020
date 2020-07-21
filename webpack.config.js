@@ -6,6 +6,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
+
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
   output: {
