@@ -6,13 +6,15 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const ENV = process.env;
 
 const baseConfig = {
   target: 'web',
-  entry: path.resolve(__dirname, 'src', 'client', 'app.js'),
+  entry: [
+    path.resolve(__dirname, 'src', 'client', 'dayjs.js'),
+    path.resolve(__dirname, 'src', 'client', 'app.js'),
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -35,9 +37,6 @@ const baseConfig = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'client', 'index.html'),
       inject: false,
-    }),
-    new MomentLocalesPlugin({
-      localesToKeep: ['ja'],
     }),
   ],
   module: {

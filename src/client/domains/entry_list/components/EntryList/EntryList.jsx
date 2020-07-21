@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment-timezone';
+import dayjs from 'dayjs';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
@@ -10,6 +10,8 @@ export function EntryList({ blogId, list }) {
       {list
         .filter((entry) => entry.publish_flag === 'open')
         .map((entry, i) => {
+          const publishedAt = dayjs(entry.published_at);
+
           return (
             <li key={i} className="entry-list-EntryList__entry">
               <Link
@@ -26,10 +28,10 @@ export function EntryList({ blogId, list }) {
                 <div className="entry-list-EntryList__text">
                   <time
                     className="entry-list-EntryList__published-at"
-                    dateTime={moment(entry.published_at).toISOString(true)}
-                    title={moment(entry.published_at).toISOString(true)}
+                    dateTime={publishedAt.format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
+                    title={publishedAt.format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
                   >
-                    {moment(entry.published_at).format('YYYY-MM-DD')}
+                    {publishedAt.format('YYYY-MM-DD')}
                   </time>
                   <p className="entry-list-EntryList__title">{entry.title}</p>
                 </div>
