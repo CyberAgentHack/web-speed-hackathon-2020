@@ -5,7 +5,6 @@ const HATENA_SDK = 'https://b.st-hatena.com/js/bookmark_button.js';
 export function HatenaBookmarkButton({ location }) {
   useEffect(() => {
     const script = document.createElement('script');
-    script.setAttribute('crossorigin', 'anonymous');
     script.setAttribute('src', HATENA_SDK);
     script.setAttribute('defer', true);
     document.body.appendChild(script);
