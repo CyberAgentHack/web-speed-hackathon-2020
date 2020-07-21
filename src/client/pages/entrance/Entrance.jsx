@@ -90,7 +90,8 @@ export function Entrance() {
             <ProportionalImage
               src={Amida2Image}
               alt=""
-              boxAspectRatio={9 / 16}
+              width={1000}
+              height={563}
             />
           </div>
           <div className="Entrance__hero-contents">

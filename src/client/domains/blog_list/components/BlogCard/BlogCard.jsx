@@ -10,7 +10,11 @@ export function BlogCard({ blog }) {
         <ProportionalImage
           src={blog.image}
           alt=""
-          boxAspectRatio={9 / 16}
+          width={1920}
+          height={1080}
+          maxWidth={1920}
+          unit={120}
+          sizes="20vw"
           roundedAsCardThumbnail
         />
       </div>

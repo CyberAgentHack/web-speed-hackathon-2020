@@ -23,14 +23,7 @@
 
 .foundation-ProportionalImage__img {
   height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.foundation-ProportionalImage__image {
-  height: 100%;
+  width: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,8 +34,6 @@
 .foundation-ProportionalImage--rounded-as-card-thumbnail
   .foundation-ProportionalImage__inner,
 .foundation-ProportionalImage--rounded-as-card-thumbnail
-  .foundation-ProportionalImage__img,
-.foundation-ProportionalImage--rounded-as-card-thumbnail
-  .foundation-ProportionalImage__image {
+  .foundation-ProportionalImage__img {
   border-radius: 4px 4px 0 0;
 }

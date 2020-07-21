@@ -22,7 +22,11 @@ export function EntryList({ blogId, list }) {
                   <ProportionalImage
                     src={entry.thumbnail}
                     alt=""
-                    boxAspectRatio={9 / 16}
+                    width={120}
+                    height={67.5}
+                    maxWidth={340}
+                    unit={60}
+                    sizes="120px"
                   />
                 </div>
                 <div className="entry-list-EntryList__text">
