@@ -4,12 +4,15 @@
   "license": "Proprietary",
   "private": true,
   "scripts": {
+    "dev": "run-s build:dev serve",
     "clean": "rimraf dist",
-    "build": "npm-run-all clean build:css build:webpack",
+    "build": "npm-run-all clean build:css build:webpack:prod",
+    "build:dev": "npm-run-all clean build:css build:webpack:dev",
     "build:css": "postcss src/app.css -d dist",
-    "build:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:webpack:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:webpack:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
-    "build:analyze": "NODE_ENV=analyze webpack",
+    "build:analyze": "cross-env NODE_ENV=analyze webpack",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js"
   },

@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 const IS_ANALYZE = process.env.NODE_ENV === 'analyze';
 
 module.exports = {
@@ -50,11 +51,13 @@ module.exports = {
   },
 
   target: 'web',
-
-  devtool: 'inline-source-map',
-
-  mode: 'none',
+  mode: 'production',
 };
+
+if (!IS_PRODUCTION) {
+  module.exports.devtool = 'source-map';
+  module.exports.mode = 'development';
+}
 
 if (IS_ANALYZE) {
   module.exports.plugins = [
