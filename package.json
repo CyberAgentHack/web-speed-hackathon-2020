@@ -6,11 +6,11 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:webpack",
-    "build:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=production webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js",
-    "analyze": "webpack --config ./webpack.analyzer.js"
+    "analyze": "cross-env NODE_ENV=production webpack --config ./webpack.analyzer.js"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
