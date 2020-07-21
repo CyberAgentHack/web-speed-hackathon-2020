@@ -1,8 +1,8 @@
-# Web Speed Hackathon Online
+# WIC Speed Hachathon Online
 
 ## 概要
 
-「Web Speed Hackathon Online」はリモート参加型のハッカソンです。
+「WIC Speed Hachathon Online」はリモート参加型のハッカソンです。
 予め準備してある Web アプリケーションのパフォーマンスを改善することで競い合います。
 
 ## 課題
