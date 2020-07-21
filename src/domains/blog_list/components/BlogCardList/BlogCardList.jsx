@@ -1,7 +1,7 @@
 import React from 'react';
-import chunk from 'lodash/chunk';
 
 import { BlogCard } from '../BlogCard';
+import { chunk } from '../../../../foundation/helpers/chunk';
 import { map } from '../../../../foundation/helpers/map';
 
 export function BlogCardList({ list, columnCount }) {
