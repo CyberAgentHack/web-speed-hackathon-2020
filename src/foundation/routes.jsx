@@ -3,18 +3,10 @@ import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import loadable from '@loadable/component'
 
-const Entrance = loadable(() => import( '../pages/entrance'), {
-  resolveComponent: (components) => components.Entrance,
-});
-const BlogHome = loadable(() => import( '../pages/blog_home'), {
-  resolveComponent: (components) => components.BlogHome,
-});
-const Entry = loadable(() => import( '../pages/entry'), {
-  resolveComponent: (components) => components.Entry,
-});
-const NotFound = loadable(() => import( '../pages/not_found'), {
-  resolveComponent: (components) => components.NotFound,
-});
+const Entrance = loadable(() => import( '../pages/entrance'));
+const BlogHome = loadable(() => import( '../pages/blog_home'));
+const Entry = loadable(() => import( '../pages/entry'));
+const NotFound = loadable(() => import( '../pages/not_found'));
 
 export function Routes() {
   const error = useSelector((state) => state.error.toJS());
