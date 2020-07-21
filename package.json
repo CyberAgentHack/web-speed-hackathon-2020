@@ -60,7 +60,6 @@
     "core-js": "^3.6.4",
     "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",
-    "jquery": "^3.4.1",
     "lodash.chunk": "^4.2.0",
     "lodash.shuffle": "^4.2.0",
     "moment-timezone": "^0.5.28",
