@@ -3,6 +3,7 @@
 const path = require('path');
 
 const webpack = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -27,6 +28,14 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
     }),
+    ...(process.env.ENABLE_BUNDLE_ANALYZE
+      ? [
+          new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+            generateStatsFile: true,
+          }),
+        ]
+      : []),
   ],
 
   module: {
