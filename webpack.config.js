@@ -31,7 +31,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
-      inject: false,
     }),
     new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
   ],
@@ -40,6 +39,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?jsx?$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
@@ -58,9 +58,6 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
           },
         ],
       },
@@ -70,15 +67,15 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin(),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          parser: safePostCssParser,
-          map: false,
-        },
-        cssProcessorPluginOptions: {
-          preset: ['default', { minifyFontValues: { removeQuotes: false } }],
-        },
-      }),
+      // new OptimizeCSSAssetsPlugin({
+      //   cssProcessorOptions: {
+      //     parser: safePostCssParser,
+      //     map: false,
+      //   },
+      //   cssProcessorPluginOptions: {
+      //     preset: ['default', { minifyFontValues: { removeQuotes: false } }],
+      //   },
+      // }),
     ],
 
     splitChunks: {
