@@ -5,6 +5,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -31,6 +33,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: 'src/assets', to: 'assets' }],
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 
   module: {
@@ -40,6 +43,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+        exclude: '/node_modules/',
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,

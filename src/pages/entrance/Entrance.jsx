@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import _ from 'lodash';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -10,6 +9,7 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
+import { sliceRandom } from '../../utils/sliceRandom';
 
 export function Entrance() {
   const dispatch = useDispatch();
@@ -85,7 +85,8 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(_.chain(blogList).take(10).shuffle().take(4).value());
+    const pickups = sliceRandom(blogList, 4);
+    setPickups(pickups);
   }
 
   return (
@@ -118,11 +119,11 @@ export function Entrance() {
         <Main>
           <article className="Entrance__section Entrance__pickup">
             <h2 className="Entrance__title">Pickups</h2>
-            <BlogCardList list={pickups} columnCount={4} />
+            <BlogCardList list={pickups} />
           </article>
           <article className="Entrance__section Entrance__blog-list">
             <h2 className="Entrance__title">ブログ一覧</h2>
-            <BlogCardList list={blogList} columnCount={4} />
+            <BlogCardList list={blogList} />
           </article>
         </Main>
       </div>

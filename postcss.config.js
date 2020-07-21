@@ -12,7 +12,7 @@ module.exports = {
     importPlugin({
       root: path.resolve(__dirname, 'src'),
     }),
-    autoprefixer(),
+    autoprefixer({ grid: true }),
     customProperties(),
     cssNano(),
   ],

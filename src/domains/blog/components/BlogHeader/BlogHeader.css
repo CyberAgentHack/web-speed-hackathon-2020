@@ -215,7 +215,7 @@
 
 .blog-BlogHeader__logo-container {
   display: grid;
-  grid-gap: calc(var(--space) * 2);
+  gap: calc(var(--space) * 2);
   grid-template-columns: 1fr 1fr 1fr;
 }
 

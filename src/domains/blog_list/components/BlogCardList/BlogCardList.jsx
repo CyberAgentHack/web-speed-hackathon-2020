@@ -1,26 +1,14 @@
 import React from 'react';
-import _ from 'lodash';
-
 import { BlogCard } from '../BlogCard';
 
-export function BlogCardList({ list, columnCount }) {
-  const rows = _.chunk(list, columnCount);
-
+export function BlogCardList({ list }) {
   return (
-    <div className="blog-list-BlogCardList">
-      {_.map(rows, (rowItems, i) => (
-        <div key={i} className="blog-list-BlogCardList__row">
-          {_.map(rowItems, (item, j) => (
-            <div
-              key={j}
-              className="blog-list-BlogCardList__column"
-              style={{ width: `calc(100% / ${columnCount})` }}
-            >
-              <BlogCard blog={item} />
-            </div>
-          ))}
-        </div>
+    <ul className={`blog-list-BlogCardList`}>
+      {list.map((item, i) => (
+        <li key={i} className="blog-list-BlogCardList__column">
+          <BlogCard blog={item} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
