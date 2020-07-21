@@ -11,7 +11,9 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
 
-import AmidaImage from '../../assets/amida.png';
+const AmidaImage = React.lazy(() =>
+  import('../../foundation/components/AmidaImage/AmidaImage'),
+);
 import Amida2Image from '../../assets/amida2.png';
 
 export default function Entrance() {
@@ -94,7 +96,9 @@ export default function Entrance() {
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src={AmidaImage} className="Entrance__hero-logo" alt="" />
+            <React.Suspense fallback={null}>
+              <AmidaImage />
+            </React.Suspense>
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
