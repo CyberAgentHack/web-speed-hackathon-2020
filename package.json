@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "Proprietary",
   "private": true,
+  "browserslist": ["last 1 versions"],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:css build:webpack",
