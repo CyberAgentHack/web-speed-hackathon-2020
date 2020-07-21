@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
 	entry: {
@@ -39,7 +39,11 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: 'app.css',
 		}),
-		new BundleAnalyzerPlugin(),
+		// new BundleAnalyzerPlugin(),
+		// new webpack.NormalModuleReplacementPlugin(
+		// 	/moment-timezone\/data\/packed\/latest\.json/,
+		// 	require.resolve('./misc/timezone-definitions'),
+		// ),
 	],
 
 	module: {
