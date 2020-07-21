@@ -1,5 +1,5 @@
 import React from 'react';
-import dayjs from 'dayjs';
+import moment from 'moment-timezone';
 import { Link } from 'react-router-dom';
 
 import { AmidaLikeButton } from '../AmidaLikeButton';
@@ -11,8 +11,8 @@ export function EntryFooter({ location, likeCount, publishedAt, onClickLike }) {
   return (
     <div className="entry-EntryFooter">
       <Link to={location.pathname} className="entry-EntryFooter__published-at">
-        <time dateTime={dayjs(publishedAt).toISOString(true)}>
-          {dayjs(publishedAt).fromNow()}
+        <time dateTime={moment(publishedAt).toISOString(true)}>
+          {moment(publishedAt).fromNow()}
         </time>
       </Link>
       <div className="entry-EntryFooter__share">

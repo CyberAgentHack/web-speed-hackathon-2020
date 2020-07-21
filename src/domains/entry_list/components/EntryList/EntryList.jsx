@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dayjs from 'dayjs';
+import moment from 'moment-timezone';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
@@ -26,10 +26,10 @@ export function EntryList({ blogId, list }) {
                 <div className="entry-list-EntryList__text">
                   <time
                     className="entry-list-EntryList__published-at"
-                    dateTime={dayjs(entry.published_at).toISOString(true)}
-                    title={dayjs(entry.published_at).toISOString(true)}
+                    dateTime={moment(entry.published_at).toISOString(true)}
+                    title={moment(entry.published_at).toISOString(true)}
                   >
-                    {dayjs(entry.published_at).format('YYYY-MM-DD')}
+                    {moment(entry.published_at).format('YYYY-MM-DD')}
                   </time>
                   <p className="entry-list-EntryList__title">{entry.title}</p>
                 </div>
