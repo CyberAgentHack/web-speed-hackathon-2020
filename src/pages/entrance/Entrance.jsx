@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import _ from 'lodash';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -10,6 +9,7 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
+import { shuffle } from '../../foundation/util_function/shuffle';
 
 const AmidaImage = React.lazy(() =>
   import('../../foundation/components/AmidaImage/AmidaImage'),
@@ -65,7 +65,9 @@ export default function Entrance() {
 
     return () => {
       clearInterval(timers[0]);
-      timers.filter((_, i) => i !== 0).forEach((timer) => clearTimeout(timer));
+      timers
+        .filter((_never, i) => i !== 0)
+        .forEach((timer) => clearTimeout(timer));
     };
   }, []);
 
@@ -78,7 +80,7 @@ export default function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(_.chain(blogList).take(10).shuffle().take(4).value());
+    setPickups(shuffle(blogList.slice(0, 10)).slice(0, 4));
   }
 
   return (
