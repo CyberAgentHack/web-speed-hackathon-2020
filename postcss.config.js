@@ -17,5 +17,5 @@ module.exports = {
     cssNano(),
   ],
 
-  map: process.env.NODE_ENV !== 'development',
+  map: process.env.NODE_ENV === 'development',
 };
