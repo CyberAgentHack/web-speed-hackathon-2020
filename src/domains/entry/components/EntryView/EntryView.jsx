@@ -56,6 +56,7 @@ function Video({ url, width, height }) {
       src={url}
       style={{ width, height }}
       controls
+      preload="none"
     />
   );
 }
