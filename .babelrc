@@ -4,7 +4,6 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-transform-modules-commonjs",
-    "lodash"
+    "@babel/plugin-transform-modules-commonjs"
   ]
 }

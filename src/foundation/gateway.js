@@ -1,7 +1,7 @@
 //import timeout from 'race-timeout';
-import _ from 'lodash';
+// import _ from 'lodash';
 import axiosMod from 'axios';
-import AxiosMockAdapter from 'axios-mock-adapter';
+// import AxiosMockAdapter from 'axios-mock-adapter';
 
 const TIMEOUT = 20 * 1000;
 const API_ENDPOINT = window.location.origin;
@@ -480,7 +480,7 @@ export async function fetch(path) {
     throw new Error(`Timeout: ${path}`);
   }
 
-  const payload = _.get(res, 'data.data');
+  const payload = res && res.data && res.data.data;
 
   if (!payload || typeof payload !== 'object') {
     throw new Error(`Invalid response for ${path}: ${JSON.stringify(res)}`);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import _ from 'lodash';
+// import _ from 'lodash';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -73,13 +73,9 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    const list = _.shuffle(
-      _.take(blogList, 10)
-    );
+    const list = blogList.slice(0, 10).sort(() => Math.random() - 0.5);
 
-    setPickups(
-      _.take(list, 4)
-    );
+    setPickups(list.slice(0, 4));
   }
 
   return (
@@ -97,7 +93,12 @@ export function Entrance() {
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src="/amida.webp" className="Entrance__hero-logo" alt="" loading="lazy" />
+            <img
+              src="/amida.webp"
+              className="Entrance__hero-logo"
+              alt=""
+              loading="lazy"
+            />
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
