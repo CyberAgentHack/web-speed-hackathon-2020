@@ -1,11 +1,11 @@
 import React from 'react';
-import _ from 'lodash';
+import chunk from 'lodash/chunk';
 
 import { BlogCard } from '../BlogCard';
 import { map } from '../../../../foundation/helpers/map';
 
 export function BlogCardList({ list, columnCount }) {
-  const rows = _.chunk(list, columnCount);
+  const rows = chunk(list, columnCount);
 
   return (
     <div className="blog-list-BlogCardList">
