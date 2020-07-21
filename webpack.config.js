@@ -50,6 +50,10 @@ module.exports = {
     ],
   },
 
+  performance: {
+    hints: 'warning',
+  },
+
   target: 'web',
 
   mode: 'production',
