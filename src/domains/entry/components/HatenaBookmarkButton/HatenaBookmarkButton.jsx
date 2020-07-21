@@ -28,6 +28,7 @@ export function HatenaBookmarkButton({ location }) {
           width="20"
           height="20"
           style={{ border: 'none' }}
+          loading="lazy"
         />
       </a>
     </div>
