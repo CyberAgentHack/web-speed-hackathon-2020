@@ -1,0 +1,19 @@
+.blog-list-BlogDummyCard {
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: #eee;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-list-BlogDummyCard__thumbnail {
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+}
+
+.blog-list-BlogDummyCard__title {
+  width: 100%;
+  height: calc(var(--space) * 4 + var(--font-size-m));
+}

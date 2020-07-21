@@ -1,0 +1,36 @@
+.blog-list-BlogDummyCardList {
+  width: 100%;
+}
+
+.blog-list-BlogDummyCardList__row {
+  width: 100%;
+  margin-bottom: calc(var(--space) * 2);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.blog-list-BlogDummyCardList__row:last-child
+  + .blog-list-BlogDummyCardList__row {
+  width: 100%;
+  margin-bottom: calc(var(--space) * 2);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.blog-list-BlogDummyCardList__row:first-child {
+  margin-bottom: calc(var(--space) * 2);
+}
+
+.blog-list-BlogDummyCardList__row:last-child {
+  margin-bottom: 0;
+}
+
+.blog-list-BlogDummyCardList__column {
+  padding-right: calc(var(--space) * 2);
+}
+
+.blog-list-BlogDummyCardList__item {
+  padding-right: calc(var(--space) * 2);
+}

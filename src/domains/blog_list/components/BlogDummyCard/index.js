@@ -1,0 +1,1 @@
+export { BlogDummyCard } from './BlogDummyCard';

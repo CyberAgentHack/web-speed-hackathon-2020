@@ -1,0 +1,29 @@
+.foundation-ProportionalDummyImage__outer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.foundation-ProportionalDummyImage {
+  position: relative;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.foundation-ProportionalDummyImage__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+.foundation-ProportionalDummyImage--rounded-as-card-thumbnail,
+.foundation-ProportionalDummyImage--rounded-as-card-thumbnail
+  .foundation-ProportionalDummyImage__inner {
+  border-radius: 4px 4px 0 0;
+}

@@ -1,2 +1,4 @@
 @import './components/BlogCardList/BlogCardList.css';
 @import './components/BlogCard/BlogCard.css';
+@import './components/BlogDummyCardList/BlogDummyCardList.css';
+@import './components/BlogDummyCard/BlogDummyCard.css';

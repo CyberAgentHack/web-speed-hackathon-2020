@@ -6,6 +6,7 @@ import { renderNotFound } from '../../domains/error/error_actions';
 
 import { fetchBlogList } from '../../domains/blog_list/blog_list_actions';
 import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
+import { BlogDummyCardList } from '../../domains/blog_list/components/BlogDummyCardList';
 
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
@@ -95,16 +96,22 @@ export function Entrance() {
           </div>
         </section>
 
-        {hasFetchFinished ? <Main>
+        <Main>
           <article className="Entrance__section Entrance__pickup">
             <h2 className="Entrance__title">Pickups</h2>
-            <BlogCardList list={pickups} columnCount={4} />
+            {hasFetchFinished ?
+              <BlogCardList list={pickups} columnCount={4} /> :
+              <BlogDummyCardList totalCount={4} columnCount={4} />
+            }
           </article>
           <article className="Entrance__section Entrance__blog-list">
             <h2 className="Entrance__title">ブログ一覧</h2>
-            <BlogCardList list={blogList} columnCount={4} />
+            {hasFetchFinished ?
+              <BlogCardList list={blogList} columnCount={4} /> :
+              <BlogDummyCardList totalCount={16} columnCount={4} />
+            }
           </article>
-        </Main> : null}
+        </Main>
       </div>
     </>
   );
