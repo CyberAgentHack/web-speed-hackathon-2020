@@ -56,6 +56,8 @@ module.exports = {
 
   target: 'web',
 
+  mode: 'none',
+
   optimization: {
     splitChunks: {
       chunks: 'all',
