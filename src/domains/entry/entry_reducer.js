@@ -7,7 +7,7 @@ export function entryReducer(state = {}, action) {
     }
 
     case ACTION_LIKE_UPDATED: {
-      return state.set('like_count', action.data.likeCount);
+      return { ...state, like_count: action.data.likeCount };
     }
 
     default: {
