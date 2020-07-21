@@ -1,6 +1,7 @@
-import timeout from 'race-timeout';
 import axiosMod from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
+
+import { timeout } from '../foundation/helpers/timeout';
 
 const TIMEOUT = 20 * 1000;
 const API_ENDPOINT = window.location.origin;
