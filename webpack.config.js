@@ -4,6 +4,11 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const ENV = process.env;
+
+console.log(ENV.XXX_ENABLE_BUNDLE_ANALYZER);
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -19,14 +24,23 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.USE_MOCK_DATA': JSON.stringify(process.env.USE_MOCK_DATA),
+      'process.env.NODE_ENV': JSON.stringify(ENV.NODE_ENV),
+      'process.env.USE_MOCK_DATA': JSON.stringify(ENV.USE_MOCK_DATA),
     }),
     new HtmlWebpackPlugin({
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
     }),
+    ...(ENV.XXX_ENABLE_BUNDLE_ANALYZER === 'true'
+      ? [
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: path.resolve(__dirname, 'tmp', 'report.html'),
+            openAnalyzer: false,
+          }),
+        ]
+      : []),
   ],
 
   module: {
