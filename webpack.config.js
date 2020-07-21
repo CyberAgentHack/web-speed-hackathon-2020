@@ -27,7 +27,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
-      inject: false,
     }),
     process.env.BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
   ].filter(v => v),
