@@ -2,14 +2,12 @@ import React from 'react';
 
 import { Main } from '../../foundation/components/Main';
 
-import BuddaImage from '../../assets/budda.webp';
-
 export function NotFound() {
   return (
     <Main>
       <div className="NotFound">
         <h1 className="NotFound__text">404 Not Found</h1>
-        <img src={BuddaImage} alt="" className="NotFound__img" loading="lazy" />
+        <img src="/budda.webp" alt="" className="NotFound__img" loading="lazy" />
         <a
           className="NotFound__img-credit"
           href="https://giphy.com/gifs/unborn-infinite-emptiness-timeless-eternity-l0HlFC4aylrLq6Zy0"
