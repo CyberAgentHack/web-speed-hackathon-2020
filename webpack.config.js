@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 const IS_ANALYZE = process.env.NODE_ENV === 'analyze';
@@ -15,6 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.js',
   },
 
   resolve: {
@@ -32,6 +34,13 @@ module.exports = {
       inject: false,
     }),
   ],
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    minimizer: [new UglifyJsPlugin()],
+  },
 
   module: {
     rules: [
