@@ -18,7 +18,7 @@ module.exports = {
     customProperties(),
 
     cssnano({
-      preset: 'default'
+      preset: 'default',
     }),
   ],
 

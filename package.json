@@ -43,6 +43,9 @@
     "babel-plugin-lodash": "^3.3.4",
     "cross-env": "^7.0.2",
     "cssnano": "^4.1.10",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
@@ -81,6 +84,7 @@
     "clean": "rimraf dist",
     "fixpack": "npx fixpack",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
+    "lint": "eslint --cache .",
     "serve": "nodemon --exec node lib/server.js",
     "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=460 --gc_interval=100 lib/server.js"
   }
