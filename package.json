@@ -70,6 +70,7 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
-    "suitcss-utils": "^3.0.0"
+    "suitcss-utils": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }
