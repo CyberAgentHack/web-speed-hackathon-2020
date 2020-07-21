@@ -37,6 +37,7 @@ function Image({ url, width, height, caption }) {
             src={url}
             style={{ width, height }}
             alt={caption}
+            loading="lazy"
           />
           <figcaption className="entry-EntryView__figcaption">
             {caption}

@@ -94,7 +94,12 @@ export function Entrance() {
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src={AmidaImage} className="Entrance__hero-logo" alt="" />
+            <img
+              src={AmidaImage}
+              className="Entrance__hero-logo"
+              alt=""
+              loading="lazy"
+            />
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
