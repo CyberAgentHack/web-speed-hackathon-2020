@@ -6,11 +6,11 @@ import { Routes } from './routes';
 
 export function Root() {
   return (
-    <Suspense fallback={<div />}>
-      <Router>
-        <GlobalHeader />
+    <Router>
+      <GlobalHeader />
+      <Suspense fallback={<div />}>
         <Routes />
-      </Router>
-    </Suspense>
+      </Suspense>
+    </Router>
   );
 }
