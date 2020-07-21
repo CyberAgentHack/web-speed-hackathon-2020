@@ -5,6 +5,7 @@ const path = require('path');
 const importPlugin = require('postcss-import');
 const autoprefixer = require('autoprefixer');
 const customProperties = require('postcss-custom-properties');
+const cssnano = require('cssnano');
 
 module.exports = (ctx) => ({
   plugins: [
@@ -15,6 +16,8 @@ module.exports = (ctx) => ({
     autoprefixer(),
 
     customProperties(),
+
+    cssnano({ preset: 'default' }),
   ],
 
   map: ctx.env !== 'production',
