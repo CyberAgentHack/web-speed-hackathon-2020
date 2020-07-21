@@ -1,51 +1,6 @@
 {
   "name": "web-speed-hackathon-online",
   "version": "0.0.1",
-  "license": "Proprietary",
-  "private": true,
-  "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm-run-all clean build:css build:webp build:webpack",
-    "build:css": "postcss src/app.css -d dist",
-    "build:webp": "cp src/assets/*.webp dist",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
-    "fmt": "prettier --write 'src/**/*.{js,css}'",
-    "serve": "nodemon --exec node lib/server.js",
-    "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=460 --gc_interval=100 lib/server.js"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-lodash": "^3.3.4",
-    "cross-env": "^7.0.2",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "nodemon": "^2.0.2",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^7.0.27",
-    "postcss-cli": "^7.1.0",
-    "postcss-custom-properties": "^9.1.1",
-    "postcss-import": "^12.0.1",
-    "prettier": "^2.0.1",
-    "rimraf": "^3.0.2",
-    "url-loader": "^4.0.0",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
-  },
-  "engines": {
-    "node": "14.5.0",
-    "yarn": "1.22.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,css}": "prettier --write"
-  },
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
@@ -78,5 +33,51 @@
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
     "suitcss-utils": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "cross-env": "^7.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-import": "^12.0.1",
+    "prettier": "^2.0.1",
+    "rimraf": "^3.0.2",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "engines": {
+    "node": "14.5.0",
+    "yarn": "1.22.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "Proprietary",
+  "lint-staged": {
+    "src/**/*.{js,css}": "prettier --write"
+  },
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all clean build:css build:webp build:webpack",
+    "build:css": "postcss src/app.css -d dist",
+    "build:webp": "cp src/assets/*.webp dist",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
+    "clean": "rimraf dist",
+    "fmt": "prettier --write 'src/**/*.{js,css}'",
+    "fixpack": "npx fixpack",
+    "serve": "nodemon --exec node lib/server.js",
+    "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=460 --gc_interval=100 lib/server.js"
   }
 }
