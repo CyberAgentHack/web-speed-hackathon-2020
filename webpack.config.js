@@ -4,6 +4,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const zopfli = require('node-zopfli');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -29,6 +30,9 @@ module.exports = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
+    }),
+    new MomentLocalesPlugin({
+      localesToKeep: ['es-us', 'ja'],
     }),
     new CompressionPlugin({
       test: /\.(css)|(js)$/,
