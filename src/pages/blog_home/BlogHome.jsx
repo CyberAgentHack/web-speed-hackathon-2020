@@ -45,8 +45,6 @@ export function BlogHome() {
   //   );
   // }
 
-  console.log(blog);
-
   return (
     <>
       <Helmet>
