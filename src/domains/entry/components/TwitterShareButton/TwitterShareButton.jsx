@@ -10,7 +10,7 @@ export function TwitterShareButton() {
     document.body.appendChild(script);
 
     return () => {
-      script.removeChild(script);
+      script.parentNode.removeChild(script);
     };
   }, []);
 

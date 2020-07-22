@@ -17,7 +17,7 @@ export function FacebookShareButton() {
     document.body.appendChild(script);
 
     return () => {
-      script.removeChild(script);
+      script.parentNode.removeChild(script);
     };
   }, []);
 
