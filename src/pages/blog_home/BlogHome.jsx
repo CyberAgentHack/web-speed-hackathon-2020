@@ -25,8 +25,10 @@ export function BlogHome() {
 
     (async () => {
       try {
-        await fetchBlog({ dispatch, blogId });
-        await fetchEntryList({ dispatch, blogId });
+        await Promise.all([
+          fetchBlog({ dispatch, blogId }),
+          fetchEntryList({ dispatch, blogId }),
+        ]);
       } catch {
         await renderNotFound({ dispatch });
       }
