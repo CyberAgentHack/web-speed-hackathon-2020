@@ -7,8 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
-
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
   output: {

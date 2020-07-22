@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import _ from 'lodash';
 import Helmet from 'react-helmet';
+import LazyLoad from 'react-lazyload'
 
 import { renderNotFound } from '../../domains/error/error_actions';
 
@@ -105,11 +106,15 @@ export function Entrance() {
         <Main>
           <article className="Entrance__section Entrance__pickup">
             <h2 className="Entrance__title">Pickups</h2>
-            <BlogCardList list={pickups} columnCount={4} />
+            <LazyLoad>
+              <BlogCardList list={pickups} columnCount={4} />
+            </LazyLoad>
           </article>
           <article className="Entrance__section Entrance__blog-list">
             <h2 className="Entrance__title">ブログ一覧</h2>
-            <BlogCardList list={blogList} columnCount={4} />
+            <LazyLoad>
+              <BlogCardList list={blogList} columnCount={4} />
+            </LazyLoad>
           </article>
         </Main>
       </div>
