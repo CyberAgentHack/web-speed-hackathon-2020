@@ -455,7 +455,9 @@ export async function fetch(path) {
       path.match(/^\/api\/blog\/\w+\/entries$/) ||
       path.match(/^\/api\/blog\/\w+\/entry\/\w+$/) ||
       path.match(/^\/api\/blog\/\w+\/entry\/\w+\/comments$/) ||
-      path.match(/^\/api\/blog\/\w+\/entry\/\w+\/comments\/\w+$/)
+      path.match(/^\/api\/blog\/\w+\/entry\/\w+\/comments\/\w+$/) ||
+      path !== '/api/404' ||
+      path !== '/api/blog/404'
     )
   ) {
     throw new Error(`Error: error`);
