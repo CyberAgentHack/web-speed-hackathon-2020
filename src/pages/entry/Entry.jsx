@@ -19,22 +19,25 @@ import { fetchCommentList } from '../../domains/comment_list/comment_list_action
 import { CommentList } from '../../domains/comment_list/components/CommentList';
 import { blogReducer } from '../../domains/blog/blog_reducer';
 import { commentListReducer } from '../../domains/comment_list/comment_list_reducer';
+import { entryReducer } from '../../domains/entry/entry_reducer';
 
 export default function Entry() {
   const location = useLocation();
   const { blogId, entryId } = useParams();
   const dispatch = useDispatch();
   const blogRedux = useSelector((state) => state.blog);
-  const entry = useSelector((state) => state.entry.toJS());
+  const entryRedux = useSelector((state) => state.entry);
   const commentListRedux = useSelector((state) => state.commentList);
 
   const blog = blogRedux ? blogRedux.toJS() : blogRedux;
   const commentList = commentListRedux ? commentListRedux.toJS() : [];
+  const entry = entryRedux ? entryRedux.toJS() : entryRedux;
 
   useEffect(() => {
     (async () => {
       store.injectReducer('blog', blogReducer);
       store.injectReducer('commentList', commentListReducer);
+      store.injectReducer('entry', entryReducer);
       try {
         await fetchBlog({ dispatch, blogId });
         await fetchEntry({ dispatch, blogId, entryId });
