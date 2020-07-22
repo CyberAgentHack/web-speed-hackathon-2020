@@ -9,7 +9,6 @@
     "build:backend": "babel --config-file ./.backend.babelrc --out-dir dist/backend src/backend",
     "build:css": "postcss src/client/app.css -d dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=production webpack --config webpack.config.js",
     "build:compress": "gzipper c --brotli --include html,css,js ./dist",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon dist/backend/server.js"
@@ -53,7 +52,6 @@
     "@babel/preset-react": "^7.9.1",
     "agentkeepalive": "^4.1.3",
     "axios": "^0.19.2",
-    "axios-mock-adapter": "^1.18.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "dayjs": "^1.8.29",
