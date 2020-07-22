@@ -5,10 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
 const CompressionPlugin = require('compression-webpack-plugin');
-const zlib = require('zlib');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -50,7 +47,6 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.8,
     }),
-    // new BundleAnalyzerPlugin(),
   ],
 
   module: {
