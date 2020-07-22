@@ -16,8 +16,8 @@ import { Main } from '../../foundation/components/Main';
 export function BlogHome() {
   const { blogId } = useParams();
   const dispatch = useDispatch();
-  const blog = useSelector((state) => state.blog.toJS());
-  const entryList = useSelector((state) => state.entryList.toJS());
+  const blog = useSelector((state) => state.blog);
+  const entryList = useSelector((state) => state.entryList);
   const [hasFetchFinished, setHasFetchFinished] = useState(false);
 
   useEffect(() => {

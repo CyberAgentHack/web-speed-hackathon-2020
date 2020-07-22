@@ -22,9 +22,9 @@ export function Entry() {
   const location = useLocation();
   const { blogId, entryId } = useParams();
   const dispatch = useDispatch();
-  const blog = useSelector((state) => state.blog.toJS());
-  const entry = useSelector((state) => state.entry.toJS());
-  const commentList = useSelector((state) => state.commentList.toJS());
+  const blog = useSelector((state) => state.blog);
+  const entry = useSelector((state) => state.entry);
+  const commentList = useSelector((state) => state.commentList);
   const [hasFetchFinished, setHasFetchFinished] = useState(false);
 
   useEffect(() => {
