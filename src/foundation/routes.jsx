@@ -7,7 +7,7 @@ const BlogHome = lazy(() => import('../pages/blog_home'));
 const Entry = lazy(() => import('../pages/entry'));
 const NotFound = lazy(() => import('../pages/not_found'));
 
-export function Routes() {
+export const Routes = () => {
   const error = useSelector((state) => state.error.toJS());
 
   if (error.error !== undefined) {
@@ -32,4 +32,4 @@ export function Routes() {
       </Switch>
     </Suspense>
   );
-}
+};

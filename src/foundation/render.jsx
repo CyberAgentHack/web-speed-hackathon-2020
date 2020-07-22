@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Root } from './root';
 import { configureStore } from './flux/store';
 
-export function render() {
+export const render = () => {
   const store = configureStore();
 
   ReactDOM.render(
@@ -14,4 +14,4 @@ export function render() {
     </Provider>,
     document.getElementById('root'),
   );
-}
+};
