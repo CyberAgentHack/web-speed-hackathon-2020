@@ -91,7 +91,7 @@
     "fixpack": "npx fixpack",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "lint": "eslint --cache .",
-    "serve": "nodemon --exec node lib/server.js",
+    "serve": "nodemon --exec node --inspect lib/server.js",
     "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=460 --gc_interval=100 lib/server.js"
   }
 }
