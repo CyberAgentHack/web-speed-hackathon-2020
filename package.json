@@ -80,5 +80,12 @@
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
     "suitcss-utils": "^3.0.0"
-  }
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.png",
+    "src/app.js",
+    "src/foundation/polyfills.js",
+    "src/foundation/helpers/dayjs.js"
+  ]
 }
