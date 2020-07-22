@@ -62,6 +62,7 @@
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
     "express": "^4.17.1",
+    "immer": "^7.0.5",
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.15",
     "moment-timezone": "^0.5.28",
