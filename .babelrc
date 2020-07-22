@@ -3,16 +3,11 @@
     [
       "@babel/preset-env",
       {
-        "modules": "false",
-        "loose": true,
         "targets": {
           "esmodules": true
         }
       }
     ],
     "@babel/preset-react"
-  ],
-  "plugins": [
-    "@babel/plugin-transform-modules-commonjs",
   ]
 }
