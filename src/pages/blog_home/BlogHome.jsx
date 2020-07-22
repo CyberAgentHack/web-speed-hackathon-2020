@@ -12,8 +12,6 @@ import { fetchEntryList } from '../../domains/entry_list/entry_list_actions';
 import { EntryList } from '../../domains/entry_list/components/EntryList';
 
 import { Main } from '../../foundation/components/Main';
-import { blogReducer } from '../../domains/blog/blog_reducer';
-import { entryListReducer } from '../../domains/entry_list/entry_list_reducer';
 
 export default function BlogHome() {
   const { blogId } = useParams();
@@ -28,6 +26,10 @@ export default function BlogHome() {
   useEffect(() => {
     (async () => {
       try {
+        const { blogReducer } = await import('../../domains/blog/blog_reducer');
+        const { entryListReducer } = await import(
+          '../../domains/entry_list/entry_list_reducer'
+        );
         store.injectReducer('blog', blogReducer);
         store.injectReducer('entryList', entryListReducer);
         await fetchBlog({ dispatch, blogId });

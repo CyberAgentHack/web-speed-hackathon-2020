@@ -17,9 +17,6 @@ import { EntryFooter } from '../../domains/entry/components/EntryFooter';
 
 import { fetchCommentList } from '../../domains/comment_list/comment_list_actions';
 import { CommentList } from '../../domains/comment_list/components/CommentList';
-import { blogReducer } from '../../domains/blog/blog_reducer';
-import { commentListReducer } from '../../domains/comment_list/comment_list_reducer';
-import { entryReducer } from '../../domains/entry/entry_reducer';
 
 export default function Entry() {
   const location = useLocation();
@@ -36,6 +33,13 @@ export default function Entry() {
 
   useEffect(() => {
     (async () => {
+      const { blogReducer } = await import('../../domains/blog/blog_reducer');
+      const { commentListReducer } = await import(
+        '../../domains/comment_list/comment_list_reducer'
+      );
+      const { entryReducer } = await import(
+        '../../domains/entry/entry_reducer'
+      );
       store.injectReducer('blog', blogReducer);
       store.injectReducer('commentList', commentListReducer);
       store.injectReducer('entry', entryReducer);

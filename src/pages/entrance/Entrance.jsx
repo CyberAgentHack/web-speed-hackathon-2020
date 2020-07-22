@@ -16,7 +16,6 @@ const AmidaImage = React.lazy(() =>
   import('../../foundation/components/AmidaImage/AmidaImage'),
 );
 import Amida2Image from '../../assets/amida2.png';
-import { blogListReducer } from '../../domains/blog_list/blog_list_reducer';
 
 export default function Entrance() {
   const dispatch = useDispatch();
@@ -30,6 +29,9 @@ export default function Entrance() {
   useEffect(() => {
     (async () => {
       try {
+        const { blogListReducer } = await import(
+          '../../domains/blog_list/blog_list_reducer'
+        );
         store.injectReducer('blogList', blogListReducer);
         await fetchBlogList({ dispatch });
       } catch {
