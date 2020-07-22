@@ -1,5 +1,9 @@
 import { render } from './foundation/render';
 
-window.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', () => {
+    render();
+  });
+} else {
   render();
-});
+}
