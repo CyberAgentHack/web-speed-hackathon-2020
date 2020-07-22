@@ -1,6 +1,15 @@
 {
   "presets": [
-    ["@babel/preset-env", { "modules": "false", "loose": true }],
+    [
+      "@babel/preset-env",
+      {
+        "modules": "false",
+        "loose": true,
+        "targets": {
+          "chrome": "79"
+        }
+      }
+    ],
     "@babel/preset-react"
   ],
   "plugins": [
