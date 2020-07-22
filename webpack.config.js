@@ -4,7 +4,6 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -28,7 +27,6 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
     }),
-    new LodashModuleReplacementPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 
