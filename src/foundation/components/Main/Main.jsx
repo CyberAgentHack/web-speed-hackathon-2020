@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function Main({ children }) {
+export const Main = ({ children }) => {
   return <main className="foundation-Main">{children}</main>;
-}
+};

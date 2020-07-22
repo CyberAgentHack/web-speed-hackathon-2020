@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export function ThumbUpIcon() {
+export const ThumbUpIcon = () => {
   return (
     <svg
       aria-hidden="true"
@@ -21,4 +21,4 @@ export function ThumbUpIcon() {
       />
     </svg>
   );
-}
+};

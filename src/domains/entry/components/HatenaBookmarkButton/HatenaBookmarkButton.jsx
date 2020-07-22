@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const HATENA_SDK = 'https://b.st-hatena.com/js/bookmark_button.js';
 
-export function HatenaBookmarkButton({ location }) {
+export const HatenaBookmarkButton = ({ location }) => {
   useEffect(() => {
     const scriptEl = document.createElement('script');
     scriptEl.src = HATENA_SDK;
@@ -32,4 +32,4 @@ export function HatenaBookmarkButton({ location }) {
       </a>
     </div>
   );
-}
+};

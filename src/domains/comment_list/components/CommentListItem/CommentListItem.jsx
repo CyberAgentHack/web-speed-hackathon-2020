@@ -7,7 +7,7 @@ import { ProportionalImage } from '../../../../foundation/components/Proportiona
 
 dayjs.extend(relativeTime);
 
-export function CommentListItem({ comment }) {
+export const CommentListItem = ({ comment }) => {
   const postedAt = dayjs(comment.posted_at).format('YYYY-MM-DDTHH:mm:ss.SSSZ');
 
   return (
@@ -33,4 +33,4 @@ export function CommentListItem({ comment }) {
       </div>
     </article>
   );
-}
+};

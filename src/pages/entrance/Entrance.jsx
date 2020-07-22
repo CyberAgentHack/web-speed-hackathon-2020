@@ -14,7 +14,7 @@ import { ProportionalImage } from '../../foundation/components/ProportionalImage
 import AmidaImage from '../../assets/amida.png';
 import Amida2Image from '../../assets/amida2.png';
 
-export function Entrance() {
+export const Entrance = () => {
   const dispatch = useDispatch();
   const blogList = useSelector((state) => state.blogList.toJS());
   const [pickups, setPickups] = useState([]);
@@ -120,4 +120,4 @@ export function Entrance() {
       </div>
     </>
   );
-}
+};

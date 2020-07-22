@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const TWITTER_SDK = 'https://platform.twitter.com/widgets.js';
 
-export function TwitterShareButton() {
+export const TwitterShareButton = () => {
   useEffect(() => {
     const scriptEl = document.createElement('script');
     scriptEl.src = TWITTER_SDK;
@@ -23,4 +23,4 @@ export function TwitterShareButton() {
       </a>
     </div>
   );
-}
+};

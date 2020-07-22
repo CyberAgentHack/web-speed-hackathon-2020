@@ -13,7 +13,7 @@ import { EntryList } from '../../domains/entry_list/components/EntryList';
 
 import { Main } from '../../foundation/components/Main';
 
-export function BlogHome() {
+export const BlogHome = () => {
   const { blogId } = useParams();
   const dispatch = useDispatch();
   const blog = useSelector((state) => state.blog.toJS());
@@ -60,4 +60,4 @@ export function BlogHome() {
       </div>
     </>
   );
-}
+};

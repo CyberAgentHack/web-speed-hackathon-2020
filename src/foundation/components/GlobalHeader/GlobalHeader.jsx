@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export function GlobalHeader() {
+export const GlobalHeader = () => {
   return (
     <header className="foundation-GlobalHeader">
       <Link to="/" className="foundation-GlobalHeader__link">
@@ -10,4 +10,4 @@ export function GlobalHeader() {
       </Link>
     </header>
   );
-}
+};

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
-export function BlogHeader({ blog }) {
+export const BlogHeader = ({ blog }) => {
   return (
     <header className="blog-BlogHeader">
       <div className="blog-BlogHeader__bg-image">
@@ -19,4 +19,4 @@ export function BlogHeader({ blog }) {
       </div>
     </header>
   );
-}
+};

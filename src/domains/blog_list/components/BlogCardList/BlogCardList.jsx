@@ -3,7 +3,7 @@ import chunk from 'lodash.chunk';
 
 import { BlogCard } from '../BlogCard';
 
-export function BlogCardList({ list, columnCount }) {
+export const BlogCardList = ({ list, columnCount }) => {
   const rows = chunk(list, columnCount);
 
   return (
@@ -23,4 +23,4 @@ export function BlogCardList({ list, columnCount }) {
       ))}
     </div>
   );
-}
+};

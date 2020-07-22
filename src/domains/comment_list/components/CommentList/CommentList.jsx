@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { CommentListItem } from '../CommentListItem';
 
-export function CommentList({ list }) {
+export const CommentList = ({ list }) => {
   return (
     <ul>
       {list.map((comment, i) => (
@@ -12,4 +12,4 @@ export function CommentList({ list }) {
       ))}
     </ul>
   );
-}
+};

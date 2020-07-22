@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function Headline({ level, text }) {
+const Headline = ({ level, text }) => {
   const tagName = `h${level}`;
   const el = React.createElement(
     tagName,
@@ -8,21 +8,21 @@ function Headline({ level, text }) {
     text,
   );
   return el;
-}
+};
 
-function Paragraph({ text }) {
+const Paragraph = ({ text }) => {
   return <p className="entry-EntryView__paragraph">{text}</p>;
-}
+};
 
-function Link({ url, text }) {
+const Link = ({ url, text }) => {
   return (
     <a className="entry-EntryView__link" href={url}>
       {text}
     </a>
   );
-}
+};
 
-function Image({ url, width, height, caption }) {
+const Image = ({ url, width, height, caption }) => {
   return (
     <div className="entry-EntryView__figure-container">
       <a
@@ -46,9 +46,9 @@ function Image({ url, width, height, caption }) {
       </a>
     </div>
   );
-}
+};
 
-function Video({ url, width, height }) {
+const Video = ({ url, width, height }) => {
   return (
     <video
       className="entry-EntryView__video"
@@ -57,18 +57,18 @@ function Video({ url, width, height }) {
       controls
     />
   );
-}
+};
 
-function Embed({ html }) {
+const Embed = ({ html }) => {
   return (
     <div
       className="entry-EntryView__embed"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
-}
+};
 
-export function EntryView({ items }) {
+export const EntryView = ({ items }) => {
   return (
     <div className="entry-EntryView">
       {items.map((item, i) => {
@@ -100,4 +100,4 @@ export function EntryView({ items }) {
       })}
     </div>
   );
-}
+};

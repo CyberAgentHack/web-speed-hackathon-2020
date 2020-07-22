@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export function ProportionalImage({
+export const ProportionalImage = ({
   boxAspectRatio,
   roundedAsCardThumbnail,
   ...imageProps
-}) {
+}) => {
   return (
     <div
       className={classNames('foundation-ProportionalImage', {
@@ -22,4 +22,4 @@ export function ProportionalImage({
       </div>
     </div>
   );
-}
+};

@@ -10,7 +10,12 @@ import { HatenaBookmarkButton } from '../HatenaBookmarkButton';
 
 dayjs.extend(relativeTime);
 
-export function EntryFooter({ location, likeCount, publishedAt, onClickLike }) {
+export const EntryFooter = ({
+  location,
+  likeCount,
+  publishedAt,
+  onClickLike,
+}) => {
   return (
     <div className="entry-EntryFooter">
       <Link to={location.pathname} className="entry-EntryFooter__published-at">
@@ -34,4 +39,4 @@ export function EntryFooter({ location, likeCount, publishedAt, onClickLike }) {
       </div>
     </div>
   );
-}
+};

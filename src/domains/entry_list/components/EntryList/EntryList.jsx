@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
-export function EntryList({ blogId, list }) {
+export const EntryList = ({ blogId, list }) => {
   return (
     <ul className="entry-list-EntryList">
       {list
@@ -41,4 +41,4 @@ export function EntryList({ blogId, list }) {
         ))}
     </ul>
   );
-}
+};

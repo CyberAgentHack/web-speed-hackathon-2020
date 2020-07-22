@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 
-export function EntryHeader({ title, publishedAt, location }) {
+export const EntryHeader = ({ title, publishedAt, location }) => {
   return (
     <div className="entry-EntryHeader">
       <h2 className="entry-EntryHeader__title">
@@ -19,4 +19,4 @@ export function EntryHeader({ title, publishedAt, location }) {
       </time>
     </div>
   );
-}
+};

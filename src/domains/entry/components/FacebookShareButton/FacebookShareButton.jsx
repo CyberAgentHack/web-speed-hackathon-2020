@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const FACEBOOK_SDK =
   'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
 
-export function FacebookShareButton() {
+export const FacebookShareButton = () => {
   useEffect(() => {
     if ('FB' in globalThis) {
       globalThis.FB.XFBML.parse();
@@ -34,4 +34,4 @@ export function FacebookShareButton() {
       ></div>
     </div>
   );
-}
+};

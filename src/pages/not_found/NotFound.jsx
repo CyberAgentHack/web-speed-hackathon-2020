@@ -4,7 +4,7 @@ import { Main } from '../../foundation/components/Main';
 
 import BuddaImage from '../../assets/budda.gif';
 
-export function NotFound() {
+export const NotFound = () => {
   return (
     <Main>
       <div className="NotFound">
@@ -21,4 +21,4 @@ export function NotFound() {
       </div>
     </Main>
   );
-}
+};
