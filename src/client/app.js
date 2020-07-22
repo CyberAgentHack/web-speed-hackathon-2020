@@ -1,9 +1,5 @@
 import { render } from './foundation/render';
 
-function init() {
+window.addEventListener('DOMContentLoaded', () => {
   render();
-}
-
-window.onload = () => {
-  init();
-};
+});
