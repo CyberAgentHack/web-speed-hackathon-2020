@@ -9,7 +9,13 @@ export function NotFound() {
     <Main>
       <div className="NotFound">
         <h1 className="NotFound__text">404 Not Found</h1>
-        <img src={BuddaImage} alt="" className="NotFound__img" />
+        <img
+          src={BuddaImage}
+          alt=""
+          width="476"
+          height="476"
+          className="NotFound__img"
+        />
         <a
           className="NotFound__img-credit"
           href="https://giphy.com/gifs/unborn-infinite-emptiness-timeless-eternity-l0HlFC4aylrLq6Zy0"
