@@ -3,13 +3,11 @@ import chunk from 'lodash.chunk';
 
 import { BlogCard } from '../BlogCard';
 
-export function BlogCardList({ list, columnCount, maxCardCount }) {
-  const placeholder =
-    maxCardCount - list.length <= 0
-      ? []
-      : Array(maxCardCount - list.length).fill(null);
+export function BlogCardList({ list: listOrEmpty, columnCount, maxCardCount }) {
+  const list =
+    listOrEmpty.length === 0 ? Array(maxCardCount).fill(null) : listOrEmpty;
 
-  const rows = chunk(list.concat(placeholder), columnCount);
+  const rows = chunk(list, columnCount);
 
   return (
     <div className="blog-list-BlogCardList">
