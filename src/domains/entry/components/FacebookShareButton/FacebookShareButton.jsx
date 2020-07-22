@@ -10,12 +10,13 @@ export function FacebookShareButton() {
       return;
     }
 
-    document.body.append(
-      `<script crossorigin="anonymous" src=${FACEBOOK_SDK}></script>`,
-    );
+    const script = document.createElement('script');
+    script.src = FACEBOOK_SDK;
+    script.crossOrigin = 'anonymous';
+    document.body.append(script);
 
     return () => {
-      script$.remove();
+      document.body.remove(script);
     };
   }, []);
 

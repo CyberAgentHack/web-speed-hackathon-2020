@@ -4,11 +4,12 @@ const TWITTER_SDK = 'https://platform.twitter.com/widgets.js';
 
 export function TwitterShareButton() {
   useEffect(() => {
-    const sdk = `<script src=${TWITTER_SDK}></script>`;
-    document.body.append(sdk);
+    const script = document.createElement('script');
+    script.src = TWITTER_SDK;
+    document.body.append(script);
 
     return () => {
-      document.body.remove(sdk);
+      document.body.remove(script);
     };
   }, []);
 

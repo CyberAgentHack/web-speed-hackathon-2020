@@ -4,11 +4,12 @@ const HATENA_SDK = 'https://b.st-hatena.com/js/bookmark_button.js';
 
 export function HatenaBookmarkButton({ location }) {
   useEffect(() => {
-    const sdk = `<script src=${HATENA_SDK}></script>`;
-    document.body.append(sdk);
+    const script = document.createElement('script');
+    script.src = HATENA_SDK;
+    document.body.append(script);
 
     return () => {
-      document.body.remove(sdk);
+      document.body.remove(script);
     };
   }, []);
 
