@@ -12,8 +12,8 @@ import { BlogCardList } from '../../domains/blog_list/components/BlogCardList';
 import { Main } from '../../foundation/components/Main';
 import { ProportionalImage } from '../../foundation/components/ProportionalImage';
 
-import AmidaImage from '../../assets/amida.png';
-import Amida2Image from '../../assets/amida2.png';
+import AmidaImage from './../../assets/amida.png';
+import Amida2Image from './../../assets/amida2.png';
 
 export function Entrance() {
   const dispatch = useDispatch();
