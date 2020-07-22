@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { chain } from 'lodash/seq';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -13,6 +12,8 @@ import { ProportionalImage } from '../../foundation/components/ProportionalImage
 
 import AmidaImage from '../../assets/amida.png';
 import Amida2Image from '../../assets/amida2.png';
+import { shuffle } from 'lodash/collection';
+import { take } from 'lodash/array';
 
 export function Entrance() {
   const dispatch = useDispatch();
@@ -76,7 +77,7 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(chain(blogList).take(10).shuffle().take(4).value());
+    setPickups(shuffle(take(blogList, 10)));
   }
 
   return (
