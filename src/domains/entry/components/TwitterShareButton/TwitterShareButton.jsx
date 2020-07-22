@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const TWITTER_SDK = 'https://platform.twitter.com/widgets.js';
 
-export function TwitterShareButton() {
+/*export*/ function /*TwitterShare*/ Button() {
   useEffect(() => {
     const script = document.createElement('script');
 
@@ -27,3 +27,5 @@ export function TwitterShareButton() {
     </div>
   );
 }
+
+export const TwitterShareButton = React.memo(Button);
