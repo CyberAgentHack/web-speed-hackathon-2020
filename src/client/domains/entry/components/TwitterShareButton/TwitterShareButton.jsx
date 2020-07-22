@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const TWITTER_SDK = 'https://platform.twitter.com/widgets.js';
 
-export function TwitterShareButton() {
+function TwitterShareButton() {
   useEffect(() => {
     const scriptEl = document.createElement('script');
     Object.assign(scriptEl, {
@@ -26,3 +26,7 @@ export function TwitterShareButton() {
     </div>
   );
 }
+
+const MemoizedTwitterShareButton = React.memo(TwitterShareButton);
+
+export { MemoizedTwitterShareButton as TwitterShareButton };

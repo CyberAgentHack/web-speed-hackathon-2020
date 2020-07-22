@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const HATENA_SDK = 'https://b.st-hatena.com/js/bookmark_button.js';
 
-export function HatenaBookmarkButton({ location }) {
+function HatenaBookmarkButton({ location }) {
   useEffect(() => {
     const scriptEl = document.createElement('script');
     Object.assign(scriptEl, {
@@ -35,3 +35,7 @@ export function HatenaBookmarkButton({ location }) {
     </div>
   );
 }
+
+const MemoizedHatenaBookmarkButton = React.memo(HatenaBookmarkButton);
+
+export { MemoizedHatenaBookmarkButton as HatenaBookmarkButton };
