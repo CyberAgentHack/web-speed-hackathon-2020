@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import chain from 'lodash/chain';
+import take from 'lodash/take';
+import shuffle from 'lodash/shuffle';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -76,7 +77,10 @@ export function Entrance() {
   }
 
   if (pickups.length === 0 && blogList.length !== 0) {
-    setPickups(chain(blogList).take(10).shuffle().take(4).value());
+    let bl = take(blogList, 10);
+    bl = shuffle(bl)
+    bl = take(bl, 4);
+    setPickups(bl);
   }
 
   return (

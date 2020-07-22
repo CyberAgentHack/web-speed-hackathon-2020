@@ -1,4 +1,18 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "presets": [
+    "@babel/preset-react", 
+    [
+      "@babel/preset-env", {
+        useBuiltIns: 'usage',
+        corejs: 3,
+        targets: {
+          ie: 11,
+          firefox: 78,
+          chrome: 84,
+          edge: 14,
+        },
+      },
+    ],
+  ],
   "plugins": ["@babel/plugin-transform-modules-commonjs"]
 }
