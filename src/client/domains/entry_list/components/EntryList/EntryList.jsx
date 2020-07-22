@@ -4,26 +4,32 @@ import dayjs from 'dayjs';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
-export function EntryList({ blogId, list }) {
+// Nullable
+function EntryList({ blogId, list: listOrEmpty }) {
+  const list =
+    listOrEmpty.length === 0
+      ? Array(20).fill({ publish_flag: 'open' })
+      : listOrEmpty;
+
   return (
     <ul className="entry-list-EntryList">
       {list
-        .filter((entry) => entry.publish_flag === 'open')
+        .filter((entry) => entry?.publish_flag === 'open')
         .map((entry, i) => {
-          const publishedAt = dayjs(entry.published_at);
+          const publishedAt = entry ? dayjs(entry?.published_at) : null;
 
           return (
             <li key={i} className="entry-list-EntryList__entry">
               <Link
-                to={`/${blogId}/entry/${entry.entry_id}`}
+                to={`/${blogId}/entry/${entry?.entry_id}`}
                 className="entry-list-EntryList__entry-inner"
               >
                 <div className="entry-list-EntryList__thumbnail">
                   <ProportionalImage
-                    src={entry.thumbnail}
+                    src={entry?.thumbnail}
                     alt=""
-                    width={120}
-                    height={67.5}
+                    width={1280}
+                    height={720}
                     maxWidth={340}
                     unit={60}
                     sizes="120px"
@@ -32,12 +38,14 @@ export function EntryList({ blogId, list }) {
                 <div className="entry-list-EntryList__text">
                   <time
                     className="entry-list-EntryList__published-at"
-                    dateTime={publishedAt.format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
-                    title={publishedAt.format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
+                    dateTime={publishedAt?.format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
+                    title={publishedAt?.format('YYYY-MM-DDTHH:mm:ss.SSSZ')}
                   >
-                    {publishedAt.format('YYYY-MM-DD')}
+                    {publishedAt?.format('YYYY-MM-DD') ?? 'XXXX-XX-XX'}
                   </time>
-                  <p className="entry-list-EntryList__title">{entry.title}</p>
+                  <p className="entry-list-EntryList__title">
+                    {entry?.title ?? '---'}
+                  </p>
                 </div>
               </Link>
             </li>
@@ -46,3 +54,7 @@ export function EntryList({ blogId, list }) {
     </ul>
   );
 }
+
+const MemoizeEntryList = React.memo(EntryList);
+
+export { MemoizeEntryList as EntryList };

@@ -19,6 +19,11 @@
   left: 0;
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.foundation-ProportionalImage__inner--loaded {
+  box-shadow: none;
 }
 
 .foundation-ProportionalImage__img {

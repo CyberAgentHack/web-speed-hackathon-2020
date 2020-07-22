@@ -34,6 +34,11 @@ export function ProportionalImage({
   roundedAsCardThumbnail,
   ...imageProps
 }) {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const onLoad = React.useCallback(() => {
+    setIsLoaded(true);
+  }, [setIsLoaded]);
+
   return (
     <div
       className={classNames('foundation-ProportionalImage', {
@@ -41,7 +46,11 @@ export function ProportionalImage({
       })}
       style={{ paddingTop: `calc(100% * ${height / width})` }}
     >
-      <div className="foundation-ProportionalImage__inner">
+      <div
+        className={classNames('foundation-ProportionalImage__inner', {
+          'foundation-ProportionalImage__inner--loaded': isLoaded,
+        })}
+      >
         {src ? (
           <img
             className="foundation-ProportionalImage__img"
@@ -51,6 +60,7 @@ export function ProportionalImage({
             height={height}
             src={optimizeSrc(src, width)}
             srcSet={createSrcSet(src, maxWidth, unit)}
+            onLoad={onLoad}
             {...imageProps}
           />
         ) : null}

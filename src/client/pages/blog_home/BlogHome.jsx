@@ -37,18 +37,14 @@ export function BlogHome() {
     })();
   }, [dispatch, blogId]);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
-
   return (
     <>
       <Helmet>
-        <title>{blog.nickname} - Amida Blog: あみぶろ</title>
+        {hasFetchFinished ? (
+          <title>{blog.nickname} - Amida Blog: あみぶろ</title>
+        ) : (
+          <title>Amida Blog: あみぶろ</title>
+        )}
       </Helmet>
       <div className="BlogHome">
         <BlogHeader blog={blog} />
