@@ -7,10 +7,11 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline --config webpack.dev.js",
     "clean": "rimraf dist",
-    "build": "npm-run-all clean build:css build:webpack",
+    "build": "npm-run-all clean -p build:css build:webpack -s build:gzipper",
     "build:css": "postcss src/app.css -d dist",
     "build:webpack": "webpack --config webpack.prod.js",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true webpack --config webpack.prod.js",
+    "build:gzipper": "gzipper c --brotli --include html,css,js ./dist",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js"
   },
@@ -19,6 +20,7 @@
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "file-loader": "^6.0.0",
+    "gzipper": "^4.0.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
