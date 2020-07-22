@@ -13,7 +13,8 @@
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=production webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js",
-    "start": "npm-run-all build serve"
+    "start": "npm-run-all build serve",
+    "bundle-stats": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --profile --json > stats.json && npx webpack-bundle-analyzer stats.json"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -69,7 +70,6 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
-    "regenerator-runtime": "^0.13.5",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "regenerator-runtime": "^0.13.5"
   }
 }
