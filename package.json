@@ -64,6 +64,7 @@
     "jquery": "^3.4.1",
     "lodash.chunk": "^4.2.0",
     "lodash.shuffle": "^4.2.0",
+    "lru-cache": "^6.0.0",
     "moment-timezone": "^0.5.28",
     "normalize.css": "^8.0.1",
     "race-timeout": "^1.0.0",
