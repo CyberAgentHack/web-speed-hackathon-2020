@@ -36,6 +36,7 @@
     "react-helmet": "^5.2.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "redaxios": "^0.2.0",
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
     "suitcss-utils": "^3.0.0"

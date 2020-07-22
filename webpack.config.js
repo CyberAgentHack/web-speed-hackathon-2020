@@ -18,6 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      axios: 'redaxios',
       react: 'preact/compat',
       'react-dom': 'preact/compat',
     },

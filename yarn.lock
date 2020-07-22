@@ -6443,6 +6443,11 @@ readdirp@~3.3.0:
   dependencies:
     picomatch "^2.0.7"
 
+redaxios@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/redaxios/-/redaxios-0.2.0.tgz#acf6f50607d232cda407d1e06f4bd043adba1992"
+  integrity sha512-lrDld2bVWIBrW+S1HPMyP8OvEtpHPIfmXyW7T7xTox1SM4/M3aC5X55xa2vRR3LZHwCvpMQAgCye8IyICzkKpA==
+
 redux@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"

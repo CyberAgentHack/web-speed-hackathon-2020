@@ -480,7 +480,22 @@ export async function fetch(path) {
     throw new Error(`Timeout: ${path}`);
   }
 
-  const payload = res && res.data && res.data.data;
+  // axios
+  // const payload = res && res.data && res.data.data;
+  // redaxios
+  // const payload = res && res.data && JSON.parse(res.data).data;
+
+  let payload;
+
+  try {
+    if (res && res.data) {
+      const json = JSON.parse(res.data);
+
+      payload = json.data;
+    }
+  } catch (e) {
+    console.error(e);
+  }
 
   if (!payload || typeof payload !== 'object') {
     throw new Error(`Invalid response for ${path}: ${JSON.stringify(res)}`);
