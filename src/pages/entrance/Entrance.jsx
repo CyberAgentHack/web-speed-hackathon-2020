@@ -65,7 +65,7 @@ export function Entrance() {
 
   if (pickups.length === 0 && blogList.length !== 0) {
     const shuffledList = shuffle(blogList);
-    const limit = take(shuffledList);
+    const limit = take(shuffledList, 4);
     setPickups(limit);
   }
 
@@ -93,14 +93,18 @@ export function Entrance() {
         </section>
 
         <Main>
-          <article className="Entrance__section Entrance__pickup">
-            <h2 className="Entrance__title">Pickups</h2>
-            {pickups && <BlogCardList list={pickups} columnCount={4} />}
-          </article>
-          <article className="Entrance__section Entrance__blog-list">
-            <h2 className="Entrance__title">ブログ一覧</h2>
-            {blogList && <BlogCardList list={blogList} columnCount={4} />}
-          </article>
+          {pickups.length !== 0 && (
+            <article className="Entrance__section Entrance__pickup">
+              <h2 className="Entrance__title">Pickups</h2>
+              <BlogCardList list={pickups} columnCount={4} />
+            </article>
+          )}
+          {blogList.length !== 0 && (
+            <article className="Entrance__section Entrance__blog-list">
+              <h2 className="Entrance__title">ブログ一覧</h2>
+              <BlogCardList list={blogList} columnCount={4} />
+            </article>
+          )}
         </Main>
       </div>
     </>
