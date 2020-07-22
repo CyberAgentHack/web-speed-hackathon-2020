@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require('terser-webpack-plugin');
 
 const debugPlugins = process.env.DEBUG === 'true' ? [new BundleAnalyzerPlugin()] : [];
 
@@ -51,6 +52,8 @@ module.exports = {
   },
 
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
     splitChunks: {
       name: 'vendor',
       chunks: 'all',
