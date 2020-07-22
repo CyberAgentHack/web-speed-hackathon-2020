@@ -6,7 +6,7 @@ export const spaController = express.Router();
 
 spaController.all('*', (_req, res) => {
   const result = fs.readFileSync(
-    path.resolve(__dirname, '..', '..', '..', 'dist', 'index.html'),
+    path.resolve(process.cwd(), 'dist', 'index.html'),
     'utf-8',
   );
   res.send(result);

@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm-run-all clean -p build:css build:backend build:webpack -s build:compress",
-    "build:backend": "babel --config-file ./.backend.babelrc --out-dir dist/backend src/backend",
+    "build:backend": "cross-env NODE_ENV=production webpack --config webpack.config.backend.js",
     "build:css": "postcss src/client/app.css -d dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build:compress": "gzipper c --brotli --include html,css,js ./dist",
