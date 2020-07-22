@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import LazyLoad from 'react-lazyload'
 
 export function ProportionalImage({
   boxAspectRatio,
@@ -14,7 +15,9 @@ export function ProportionalImage({
       style={{ paddingTop: `calc(100% * ${boxAspectRatio})` }}
     >
       <div className="foundation-ProportionalImage__inner">
-        <img className="foundation-ProportionalImage__img" {...imageProps} />
+        <LazyLoad>
+          <img className="foundation-ProportionalImage__img" {...imageProps} />
+        </LazyLoad>
       </div>
     </div>
   );
