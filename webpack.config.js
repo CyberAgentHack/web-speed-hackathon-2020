@@ -59,7 +59,5 @@ module.exports = {
 
   target: 'web',
 
-  devtool: 'inline-source-map',
-
   mode: 'none',
 };
