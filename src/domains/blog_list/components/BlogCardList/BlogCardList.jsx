@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import chunk from 'lodash/chunk';
+import map from 'lodash/map';
 
 import { BlogCard } from '../BlogCard';
 
