@@ -16,12 +16,14 @@
 
 .foundation-GlobalHeader__en {
   font-family: 'Baloo Thambi 2', cursive;
+  font-display: swap;
   font-weight: bold;
   flex-shrink: 0;
 }
 
 .foundation-GlobalHeader__ja {
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-display: swap;
   font-weight: bold;
   flex-shrink: 0;
 }

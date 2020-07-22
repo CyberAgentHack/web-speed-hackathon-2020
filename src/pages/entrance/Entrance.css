@@ -77,12 +77,14 @@
 
 .Entrance__hero-title-en {
   font-family: 'Baloo Thambi 2', cursive;
+  font-display: swap;
   font-weight: bold;
   flex-shrink: 0;
 }
 
 .Entrance__hero-title-ja {
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-display: swap;
   font-weight: bold;
   flex-shrink: 0;
 }
@@ -98,12 +100,14 @@
 
 .Entrance__hero-text-en {
   font-family: 'Baloo Thambi 2', cursive;
+  font-display: swap;
   font-weight: bold;
   flex-shrink: 0;
 }
 
 .Entrance__hero-text-ja {
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-display: swap;
   font-weight: bold;
   flex-shrink: 0;
 }
