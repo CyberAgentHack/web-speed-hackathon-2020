@@ -12,16 +12,20 @@ import { fetchEntryList } from '../../domains/entry_list/entry_list_actions';
 import { EntryList } from '../../domains/entry_list/components/EntryList';
 
 import { Main } from '../../foundation/components/Main';
+import { blogReducer } from '../../domains/blog/blog_reducer';
 
 export default function BlogHome() {
   const { blogId } = useParams();
   const dispatch = useDispatch();
-  const blog = useSelector((state) => state.blog.toJS());
+  const blogRedux = useSelector((state) => state.blog);
   const entryList = useSelector((state) => state.entryList.toJS());
+
+  const blog = blogRedux ? blogRedux.toJS() : blogRedux;
 
   useEffect(() => {
     (async () => {
       try {
+        store.injectReducer('blog', blogReducer);
         await fetchBlog({ dispatch, blogId });
         await fetchEntryList({ dispatch, blogId });
       } catch {
