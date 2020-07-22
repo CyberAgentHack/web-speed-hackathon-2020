@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useStore, useSelector, useDispatch } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import { renderNotFound } from '../../domains/error/error_actions';
@@ -20,6 +20,7 @@ export default function BlogHome() {
   const dispatch = useDispatch();
   const blogRedux = useSelector((state) => state.blog);
   const entryListRedux = useSelector((state) => state.entryList);
+  const store = useStore();
 
   const blog = blogRedux ? blogRedux.toJS() : blogRedux;
   const entryList = entryListRedux ? entryListRedux.toJS() : [];

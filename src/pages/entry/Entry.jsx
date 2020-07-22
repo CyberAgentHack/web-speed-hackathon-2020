@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useStore, useSelector, useDispatch } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import { Main } from '../../foundation/components/Main';
@@ -28,10 +28,11 @@ export default function Entry() {
   const blogRedux = useSelector((state) => state.blog);
   const entryRedux = useSelector((state) => state.entry);
   const commentListRedux = useSelector((state) => state.commentList);
+  const store = useStore();
 
   const blog = blogRedux ? blogRedux.toJS() : blogRedux;
   const commentList = commentListRedux ? commentListRedux.toJS() : [];
-  const entry = entryRedux ? entryRedux.toJS() : entryRedux;
+  const entry = entryRedux ? entryRedux.toJS() : {};
 
   useEffect(() => {
     (async () => {
@@ -52,7 +53,7 @@ export default function Entry() {
     <>
       <Helmet>
         <title>
-          {entry && blog
+          {entry.title !== undefined && blog
             ? `${entry.title} - ${blog.nickname} - Amida Blog: あみぶろ`
             : 'Amida Blog: あみぶろ'}
         </title>
