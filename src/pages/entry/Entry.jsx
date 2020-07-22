@@ -45,20 +45,23 @@ export function Entry() {
     })();
   }, [dispatch, blogId, entryId]);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
+  // if (!hasFetchFinished) {
+  //   return (
+  //     <Helmet>
+  //       <title>Amida Blog: あみぶろ</title>
+  //     </Helmet>
+  //   );
+  // }
+
+  const title =
+    entry.title && blog.nickname
+      ? `${entry.title} - ${blog.nickname} - Amida Blog: あみぶろ`
+      : 'Amida Blog: あみぶろ';
 
   return (
     <>
       <Helmet>
-        <title>
-          {entry.title} - {blog.nickname} - Amida Blog: あみぶろ
-        </title>
+        <title>{title}</title>
       </Helmet>
       <div className="Entry">
         <BlogHeader blog={blog} />

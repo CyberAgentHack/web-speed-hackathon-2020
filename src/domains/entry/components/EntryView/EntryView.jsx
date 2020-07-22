@@ -70,7 +70,7 @@ function Embed({ html }) {
   );
 }
 
-export function EntryView({ items }) {
+export function EntryView({ items = [] }) {
   return (
     <div className="entry-EntryView">
       {items.map((item, i) => {

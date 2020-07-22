@@ -9,6 +9,8 @@ export function EntryHeader({ title, publishedAt, location }) {
   const m = `0${date.getMonth() + 1}`.slice(-2);
   const d = `0${date.getDate()}`.slice(-2);
 
+  const time = Number.isNaN(date.getTime()) ? null : `${y}-${m}-${d}`;
+
   return (
     <div className="entry-EntryHeader">
       <h2 className="entry-EntryHeader__title">
@@ -18,10 +20,10 @@ export function EntryHeader({ title, publishedAt, location }) {
       </h2>
       <time
         className="entry-EntryHeader__published-at"
-        dateTime={date.toISOString()}
-        title={date.toISOString()}
+        dateTime={Number.isFinite(date.getTime()) && date.toISOString()}
+        title={Number.isFinite(date.getTime()) && date.toISOString()}
       >
-        {`${y}-${m}-${d}`}
+        {time}
       </time>
     </div>
   );

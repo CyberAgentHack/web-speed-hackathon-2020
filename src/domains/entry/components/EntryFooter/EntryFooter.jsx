@@ -9,15 +9,25 @@ import { FacebookShareButton } from '../FacebookShareButton';
 import { HatenaBookmarkButton } from '../HatenaBookmarkButton';
 
 export function EntryFooter({ location, likeCount, publishedAt, onClickLike }) {
-  const dateTime = useMemo(() => new Date(publishedAt).toISOString(), [
-    publishedAt,
-  ]);
+  const dateTime = useMemo(() => {
+    const d = new Date(publishedAt);
 
-  const time = useMemo(() =>
-    formatDistanceToNow(new Date(publishedAt), { addSuffix: true }, [
-      publishedAt,
-    ]),
-  );
+    if (Number.isNaN(d.getTime())) {
+      return null;
+    }
+
+    return d.toISOString();
+  }, [publishedAt]);
+
+  const time = useMemo(() => {
+    const d = new Date(publishedAt);
+
+    if (Number.isNaN(d.getTime())) {
+      return null;
+    }
+
+    return formatDistanceToNow(d, { addSuffix: true });
+  }, [publishedAt]);
 
   return (
     <div className="entry-EntryFooter">

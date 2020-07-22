@@ -64,13 +64,13 @@ export function Entrance() {
     };
   }, []);
 
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
+  // if (!hasFetchFinished) {
+  //   return (
+  //     <Helmet>
+  //       <title>Amida Blog: あみぶろ</title>
+  //     </Helmet>
+  //   );
+  // }
 
   if (pickups.length === 0 && blogList.length !== 0) {
     const list = blogList.slice(0, 10).sort(() => Math.random() - 0.5);
