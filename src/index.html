@@ -9,7 +9,7 @@
     <link rel="preload" as="script" href="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" />
     <% } %>
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" async></script>
+    <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" defer></script>
     <% } %>
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="//ryotasugawara.github.io" crossorigin>

@@ -11,6 +11,9 @@ function init() {
   render();
 }
 
-window.onload = () => {
-  init();
-};
+// window.onload = () => {
+//   init();
+// };
+
+// script is defer
+init();
