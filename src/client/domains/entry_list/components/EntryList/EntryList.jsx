@@ -16,7 +16,9 @@ function EntryList({ blogId, list: listOrEmpty }) {
       {list
         .filter((entry) => entry?.publish_flag === 'open')
         .map((entry, i) => {
-          const publishedAt = entry ? dayjs(entry?.published_at) : null;
+          const publishedAt = entry?.published_at
+            ? dayjs(entry?.published_at)
+            : null;
 
           return (
             <li key={i} className="entry-list-EntryList__entry">
