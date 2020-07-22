@@ -1,8 +1,15 @@
 import axios from 'axios';
+import Agent from 'agentkeepalive';
 
 export const api = axios.create({
   baseURL: 'https://web-speed-hackathon-api.herokuapp.com/api',
   responseType: 'json',
+  httpAgent: new Agent({
+    keepAliveMsecs: 10 * 1000,
+  }),
+  httpsAgent: new Agent.HttpsAgent({
+    keepAliveMsecs: 10 * 1000,
+  }),
 });
 
 export function getBlogs(limit, offset) {
