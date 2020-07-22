@@ -14,6 +14,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
   output: {
+    publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
@@ -37,7 +38,7 @@ module.exports = {
 
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'initial'
     },
     minimizer: [new UglifyJsPlugin()],
   },
