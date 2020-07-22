@@ -68,6 +68,9 @@ function Embed({ html }) {
 }
 
 export function EntryView({ items }) {
+  if (items == null || items.length < 1) {
+    return null;
+  }
   return (
     <div className="entry-EntryView">
       {items.map((item, i) => {
