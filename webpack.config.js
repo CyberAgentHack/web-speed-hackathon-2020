@@ -50,6 +50,13 @@ module.exports = {
     ],
   },
 
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'all',
+    }
+  },
+
   target: 'web',
 
   devtool: 'inline-source-map',
