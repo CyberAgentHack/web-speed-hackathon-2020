@@ -62,7 +62,9 @@ function Embed({ html }) {
   return (
     <div
       className="entry-EntryView__embed"
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{
+        __html: html.replace(/<iframe /g, '<iframe loading="lazy" '),
+      }}
     />
   );
 }
