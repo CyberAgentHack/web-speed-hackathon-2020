@@ -56,6 +56,7 @@
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "dayjs": "^1.8.29",
+    "dnscache": "^1.0.2",
     "express": "^4.17.1",
     "express-static-gzip": "^2.0.7",
     "lodash.chunk": "^4.2.0",
