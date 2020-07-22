@@ -15,21 +15,16 @@ export function Entrance() {
   const dispatch = useDispatch();
   const blogList = useSelector((state) => state.blogList);
   const [pickups, setPickups] = useState([]);
-  const [hasFetchFinished, setHasFetchFinished] = useState(false);
   const heroTextJaList = ['あみぶろ', '阿弥ぶろ', 'アミブロ'];
   const [heroTextJa, setHeroTextJa] = useState(heroTextJaList[0]);
 
   useEffect(() => {
-    setHasFetchFinished(false);
-
     (async () => {
       try {
         await fetchBlogList({ dispatch });
       } catch {
         await renderNotFound({ dispatch });
       }
-
-      setHasFetchFinished(true);
     })();
   }, [dispatch]);
 
@@ -63,14 +58,6 @@ export function Entrance() {
       timers.filter((_, i) => i !== 0).forEach((timer) => clearTimeout(timer));
     };
   }, []);
-
-  if (!hasFetchFinished) {
-    return (
-      <Helmet>
-        <title>Amida Blog: あみぶろ</title>
-      </Helmet>
-    );
-  }
 
   if (pickups.length === 0 && blogList.length !== 0) {
     setPickups(shuffle(blogList.slice(0, 10)).slice(0, 4));
@@ -116,11 +103,11 @@ export function Entrance() {
         <Main>
           <article className="Entrance__section Entrance__pickup">
             <h2 className="Entrance__title">Pickups</h2>
-            <BlogCardList list={pickups} columnCount={4} />
+            <BlogCardList list={pickups} columnCount={4} maxCardCount={4} />
           </article>
           <article className="Entrance__section Entrance__blog-list">
             <h2 className="Entrance__title">ブログ一覧</h2>
-            <BlogCardList list={blogList} columnCount={4} />
+            <BlogCardList list={blogList} columnCount={4} maxCardCount={20} />
           </article>
         </Main>
       </div>
