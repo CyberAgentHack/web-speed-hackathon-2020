@@ -4,4 +4,5 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: calc(var(--space) * 2);
+  padding-right: calc(var(--space) * 2);
 }
