@@ -57,6 +57,7 @@
     "axios-mock-adapter": "^1.18.1",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
+    "express-static-gzip": "^2.0.7",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.1",
     "lodash.chunk": "^4.2.0",

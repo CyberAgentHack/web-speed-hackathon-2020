@@ -2725,6 +2725,13 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
+express-static-gzip@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/express-static-gzip/-/express-static-gzip-2.0.7.tgz#274d35c92c5f5cd222a6d3b504f343bd9931519e"
+  integrity sha512-cOYQsNfijszmuhbySBBnnBDAz6VEL7euBdnb6DtGaRdXlhA2NPmuuOsTlApYh3aKAv+E/P33L4JMnBoiz99/PA==
+  dependencies:
+    serve-static "^1.14.1"
+
 express@^4.16.3, express@^4.17.1:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -5943,7 +5950,7 @@ serialize-javascript@^3.0.0:
   dependencies:
     randombytes "^2.1.0"
 
-serve-static@1.14.1:
+serve-static@1.14.1, serve-static@^1.14.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.1.tgz#666e636dc4f010f7ef29970a88a674320898b2f9"
   integrity sha512-JMrvUwE54emCYWlTI+hGrGv5I8dEwmco/00EvkzIIsR7MqrHonbD9pO2MOfFnpFntl7ecpZs+3mW+XbQZu9QCg==
