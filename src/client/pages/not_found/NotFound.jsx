@@ -2,15 +2,13 @@ import React from 'react';
 
 import { Main } from '../../foundation/components/Main';
 
-import BuddaImage from '../../assets/budda.gif';
-
 export function NotFound() {
   return (
     <Main>
       <div className="NotFound">
         <h1 className="NotFound__text">404 Not Found</h1>
         <img
-          src={BuddaImage}
+          src="/assets/budda.gif"
           alt=""
           width="476"
           height="476"

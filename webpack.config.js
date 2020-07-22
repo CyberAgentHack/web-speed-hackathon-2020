@@ -6,6 +6,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const ENV = process.env;
 
@@ -36,6 +37,14 @@ const baseConfig = {
       template: path.resolve(__dirname, 'src', 'client', 'index.html'),
       inject: false,
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src', 'client', 'assets'),
+          to: path.resolve(__dirname, 'dist', 'assets'),
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -43,16 +52,6 @@ const baseConfig = {
         test: /\.m?jsx?$/,
         use: {
           loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.(png|svg|jpe?g|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            outputPath: 'images',
-            publicPath: '/images/',
-          },
         },
       },
     ],
