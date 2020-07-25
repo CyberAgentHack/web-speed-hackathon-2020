@@ -39,6 +39,7 @@ module.exports = (env, { mode }) => {
           use: {
             loader: 'babel-loader',
           },
+          exclude: /node_modules/,
         },
         {
           test: /\.(png|svg|jpe?g|gif)$/,
