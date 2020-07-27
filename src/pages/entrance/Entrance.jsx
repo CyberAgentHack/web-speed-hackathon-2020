@@ -80,6 +80,8 @@ export default function Entrance() {
   return (
     <>
       <Helmet>
+        <meta http-equiv="x-dns-prefetch-control" content="on" />
+        <link rel="dns-prefetch" href="https://ryotasugawara.github.io" />
         <title>Amida Blog: あみぶろ</title>
       </Helmet>
       <div className="Entrance">
