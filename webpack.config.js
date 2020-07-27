@@ -56,7 +56,7 @@ module.exports = (env, { mode }) => {
 
     target: 'web',
 
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
 
     mode,
   };
