@@ -6,5 +6,9 @@
   "github": {
     "silent": false,
     "autoJobCancelation": true
-  }
+  },
+  "routes": [
+    { "src": "/", "dest": "api/server.js" },
+    { "src": "/server", "dest": "api/server.js" }
+  ]
 }
