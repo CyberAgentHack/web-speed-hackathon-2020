@@ -6,7 +6,6 @@
     "autoJobCancelation": true
   },
   "routes": [
-    { "src": "/api", "dest": "api/index.js" },
-    { "src": "/webhook", "dest": "api/server.js" }
+    { "src": "/api", "dest": "api/server.js" }
   ]
 }
