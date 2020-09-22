@@ -6,8 +6,13 @@
     "autoJobCancelation": true
   },
   "routes": [
-    { "src": "/api", "dest": "api/server.js" },
-    { "src": "/api/hogehoge", "dest": "api/server.js" },
-    { "src": "/api/blogs", "dest": "api/index.js" }
+    { "src": "/api/blogs", "dest": "api/server.js" },
+    { "src": "/api/blog/:blogId", "dest": "api/server.js" },
+    { "src": "/api/blog/:blogId/entries", "dest": "api/server.js" },
+    { "src": "/api/blog/:blogId/entry/:entryId", "dest": "api/server.js" },
+    { "src": "/api/blog/:blogId/entry/:entryId/comments", "dest": "api/server.js" },
+    { "src": "/api/blog/:blogId/entry/:entryId/comment/:commentId", "dest": "api/server.js" },
+    { "src": "/api/blog/:blogId/entry/:entryId/like", "dest": "api/server.js" },
+    { "src": "*", "dest": "api/server.js" }
   ]
 }

@@ -1,12 +1,12 @@
-'use strict';
+import express from 'express';
+import { apiController } from '../lib/controller/api';
+import { spaController } from '../lib/controller/spa';
 
-const express = require('express');
 const PORT = process.env.PORT || 3000;
-
 const app = express();
 
-app.get('/api', (req, res) => res.send('Hello LINE BOT!(GET)'));
-app.get('/api/hogehoge', (req, res) => res.send('Hello hogehoge'));
+app.use(express.static('dist'));
+app.use(apiController);
+app.use(spaController);
 
 (process.env.NOW_REGION) ? module.exports = app : app.listen(PORT);
-console.log(`Server running at ${PORT}`);
