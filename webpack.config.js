@@ -23,7 +23,8 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.USE_MOCK_DATA': JSON.stringify(process.env.USE_MOCK_DATA),
     }),
-    new BundleAnalyzerPlugin(),
+    // 本番では表示しないためコメントアウトする
+    // new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
