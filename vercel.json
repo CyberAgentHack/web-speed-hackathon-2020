@@ -1,10 +1,11 @@
 {
   "version": 2,
   "public": false,
-  "cleanUrls": true,
-  "trailingSlash": false,
   "github": {
     "silent": false,
     "autoJobCancelation": true
-  }
+  },
+  "routes": [
+    { "src": "/api", "dest": "api/index.js" }
+  ]
 }

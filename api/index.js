@@ -6,8 +6,6 @@ import axios from 'axios';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.static('dist'));
-
 // model payload
 function createId(n) {
   const c = [];
@@ -156,6 +154,9 @@ app.post(
     res.send(data);
   }),
 );
+
+// test
+app.get('/', (req, res) => res.send('Hello LINE BOT!(GET)'));
 
 // spaController
 app.all('*', (_req, res) => {
