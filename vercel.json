@@ -7,7 +7,7 @@
   },
   "routes": [
     { "src": "/api/blogs", "dest": "api/server.js" },
-    { "src": "/api/blog/:blogId", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)", "dest": "api/server.js" },
     { "src": "/api/blog/:blogId/entries", "dest": "api/server.js" },
     { "src": "/api/blog/:blogId/entry/:entryId", "dest": "api/server.js" },
     { "src": "/api/blog/:blogId/entry/:entryId/comments", "dest": "api/server.js" },
