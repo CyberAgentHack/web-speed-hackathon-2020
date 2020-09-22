@@ -13,6 +13,6 @@
     { "src": "/api/blog/:blogId/entry/:entryId/comments", "dest": "api/server.js" },
     { "src": "/api/blog/:blogId/entry/:entryId/comment/:commentId", "dest": "api/server.js" },
     { "src": "/api/blog/:blogId/entry/:entryId/like", "dest": "api/server.js" },
-    { "src": "*", "dest": "api/server.js" }
+    { "src": "/(.*)", "dest": "api/server.js" }
   ]
 }
