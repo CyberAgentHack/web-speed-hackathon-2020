@@ -1,22 +1,90 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
-import { asyncWrap } from '../lib/utils';
-import {
-  getBlogById,
-  getBlogEntries,
-  getBlogEntryById,
-  getBlogEntryCommentById,
-  getBlogEntryComments,
-  getBlogs,
-  postBlogEntryLike,
-} from '../lib/api/blog';
-import { Payload } from '../lib/model/payload';
+import axios from 'axios';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.static('dist'));
+
+// model payload
+function createId(n) {
+  const c = [];
+  const len = n * 1000;
+  for (let i = 0; i < len; i++) {
+    c.push[i];
+  }
+  const result = c.sort((a, b) => a - b).join(',');
+  return result;
+}
+
+class Payload {
+  constructor(source) {
+    this.data = JSON.stringify(source.data);
+  }
+
+  toResponse() {
+    try {
+      const data = JSON.parse(this.data);
+      const id = createId(Math.floor(Math.random() * this.data.length));
+      return {
+        data,
+        id,
+      };
+    } catch (e) {
+      console.error('Failed to parse Payload to Response', e);
+      throw new Error(e);
+    }
+  }
+}
+
+// utils
+function asyncWrap(handler) {
+  return async (req, res, next) => {
+    try {
+      await handler(req, res)
+    } catch (e) {
+      next(e);
+    }
+  };
+}
+
+// blog api
+const api = axios.create({
+  baseURL: 'https://web-speed-hackathon-api.herokuapp.com/api',
+});
+
+function getBlogs(limit, offset) {
+  const params = { limit, offset };
+  return api.get('/blogs', { params });
+}
+
+function getBlogById(blogId) {
+  return api.get(`/blog/${blogId}`);
+}
+
+function getBlogEntries(blogId, limit, offset) {
+  const params = { limit, offset };
+  return api.get(`/blog/${blogId}/entries`, { params });
+}
+
+function getBlogEntryById(blogId, entryId) {
+  return api.get(`/blog/${blogId}/entry/${entryId}`);
+}
+
+function getBlogEntryComments(blogId, entryId, limit, offset) {
+  const params = { limit, offset };
+  return api.get(`/blog/${blogId}/entry/${entryId}/comments`, { params });
+}
+
+function getBlogEntryCommentById(blogId, entryId, commentId) {
+  return api.get(`/blog/${blogId}/entry/${entryId}/comment/${commentId}`);
+}
+
+function postBlogEntryLike(blogId, entryId) {
+  return api.post(`/blog/${blogId}/entry/${entryId}/like`);
+}
 
 // apiController
 app.get(
