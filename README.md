@@ -74,3 +74,9 @@ $ yarn build
 ```bash
 $ yarn serve
 ```
+### 初期状態
+## Lighthouse
+![スクリーンショット 2020-09-22 17 13 59](https://user-images.githubusercontent.com/19602112/93858405-15bc3900-fcf7-11ea-8b9c-accd0ed07d83.png)
+
+## Webpack Analyzer
+![スクリーンショット 2020-09-22 17 12 26](https://user-images.githubusercontent.com/19602112/93858270-dbeb3280-fcf6-11ea-80c8-64d5f9ee8c5e.png)
