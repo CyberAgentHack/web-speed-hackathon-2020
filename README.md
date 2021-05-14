@@ -5,6 +5,9 @@
 「Web Speed Hackathon Online」はリモート参加型のハッカソンです。
 予め準備してある Web アプリケーションのパフォーマンスを改善することで競い合います。
 
+- [パフォーマンス改善ハッカソン「Web Speed Hackathon Online」を学生向け・社内向けの2回開催しました！ | CyberAgent Developers Blog](https://developers.cyberagent.co.jp/blog/archives/28484/)
+- [Web Speed Hackathon Online 出題のねらいと解説 · CyberAgentHack/web-speed-hackathon-2020 Wiki](https://github.com/CyberAgentHack/web-speed-hackathon-2020/wiki/Web-Speed-Hackathon-Online-%E5%87%BA%E9%A1%8C%E3%81%AE%E3%81%AD%E3%82%89%E3%81%84%E3%81%A8%E8%A7%A3%E8%AA%AC)
+
 ## 課題
 
 架空のブログサイト、Amida Blog (あみぶろ)のパフォーマンスを改善してください。
