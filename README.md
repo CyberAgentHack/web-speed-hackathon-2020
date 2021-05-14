@@ -1,13 +1,14 @@
-# WIC Speed Hackathon Online
+# Web Speed Hackathon Online Vol.1
 
 ## 概要
 
-「WIC Speed Hackathon Online」はリモート参加型のハッカソンです。
+「Web Speed Hackathon Online」はリモート参加型のハッカソンです。
 予め準備してある Web アプリケーションのパフォーマンスを改善することで競い合います。
 
 ## 課題
 
 架空のブログサイト、Amida Blog (あみぶろ)のパフォーマンスを改善してください。
+
 https://web-speed-hackathon-online-prd.herokuapp.com/
 
 ※注意: かなり遅いサイトとなっております
